@@ -526,12 +526,110 @@
             <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
                 <p><strong>About the Author:</strong> Nishat Raihan is a PhD student at George Mason University researching large language models, multilingual NLP, and code generation. His work focuses on making AI tools more accessible and effective for developers worldwide.</p>
             </div>
+
+            <!-- Like and Share Section -->
+            <div style="margin-top: 40px; padding: 30px; background: white; border-top: 2px solid #e0e0e0; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <button id="likeButton" style="background: #006633; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-size: 16px; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
+                        <span id="likeIcon">👍</span>
+                        <span>Like</span>
+                        <span id="likeCount" style="background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 12px; font-weight: bold;">0</span>
+                    </button>
+                </div>
+                <div style="color: #666; font-size: 14px;">
+                    Did you find this article helpful? Let me know!
+                </div>
+            </div>
         </article>
+
+        <!-- Comments Section -->
+        <div style="background: white; padding: 40px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+            <h2 style="color: #006633; font-size: 24px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #FFCC33;">Comments</h2>
+            <div id="disqus_thread"></div>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Nishat Raihan | George Mason University</p>
     </footer>
+
+    <!-- Like Button Script -->
+    <script>
+        // Like functionality with localStorage
+        const postId = 'mhumaneval-blog-post';
+        const likeButton = document.getElementById('likeButton');
+        const likeCount = document.getElementById('likeCount');
+        const likeIcon = document.getElementById('likeIcon');
+
+        // Initialize like count from localStorage
+        let likes = parseInt(localStorage.getItem(postId + '-likes')) || 0;
+        let userLiked = localStorage.getItem(postId + '-userLiked') === 'true';
+
+        // Update display
+        function updateLikeButton() {
+            likeCount.textContent = likes;
+            if (userLiked) {
+                likeButton.style.background = '#FFCC33';
+                likeButton.style.color = '#006633';
+                likeIcon.textContent = '❤️';
+            } else {
+                likeButton.style.background = '#006633';
+                likeButton.style.color = 'white';
+                likeIcon.textContent = '👍';
+            }
+        }
+
+        updateLikeButton();
+
+        // Handle like button click
+        likeButton.addEventListener('click', function() {
+            if (userLiked) {
+                likes--;
+                userLiked = false;
+            } else {
+                likes++;
+                userLiked = true;
+            }
+            
+            localStorage.setItem(postId + '-likes', likes);
+            localStorage.setItem(postId + '-userLiked', userLiked);
+            updateLikeButton();
+        });
+
+        // Hover effect
+        likeButton.addEventListener('mouseenter', function() {
+            if (!userLiked) {
+                this.style.background = '#004d26';
+            } else {
+                this.style.background = '#e6b82e';
+            }
+        });
+
+        likeButton.addEventListener('mouseleave', function() {
+            if (!userLiked) {
+                this.style.background = '#006633';
+            } else {
+                this.style.background = '#FFCC33';
+            }
+        });
+    </script>
+
+    <!-- Disqus Comments Script -->
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'https://mraihan-gmu.github.io/blog-post-mhumaneval.html';
+            this.page.identifier = 'mhumaneval-blog-post';
+            this.page.title = 'Building mHumanEval: Lessons from Creating a 204-Language Benchmark';
+        };
+        
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://nishat-raihan.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 </body>
 </html>

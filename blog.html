@@ -235,6 +235,7 @@
                 <span>📅 March 15, 2025</span>
                 <span>👤 Nishat Raihan</span>
                 <span>📖 8 min read</span>
+                <span id="post-likes-mhumaneval">👍 <span class="like-count">0</span> likes</span>
             </div>
             <h2 class="blog-title">
                 <a href="blog-post-mhumaneval.html">Building mHumanEval: Lessons from Creating a 204-Language Benchmark</a>
@@ -252,6 +253,16 @@
             <a href="blog-post-mhumaneval.html" class="read-more">Read More →</a>
         </article>
     </div>
+
+    <script>
+        // Display like counts from localStorage on the blog listing page
+        const postId = 'mhumaneval-blog-post';
+        const likes = parseInt(localStorage.getItem(postId + '-likes')) || 0;
+        const likeCountElement = document.querySelector('#post-likes-mhumaneval .like-count');
+        if (likeCountElement) {
+            likeCountElement.textContent = likes;
+        }
+    </script>
 
     <!-- Footer -->
     <footer>
