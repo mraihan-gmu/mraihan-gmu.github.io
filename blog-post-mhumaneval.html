@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building mHumanEval: Lessons from Creating a 204-Language Benchmark - Nishat Raihan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #006633;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #FFCC33;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFCC33;
+        }
+
+        .old-site-btn {
+            background: #FFCC33;
+            color: #006633;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .old-site-btn:hover {
+            background: #e6b82e;
+            color: #006633 !important;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .article-header {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 4px solid #006633;
+        }
+
+        .article-title {
+            color: #006633;
+            font-size: 36px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            color: #006633;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 13px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .article-content {
+            background: white;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .article-content h2 {
+            color: #006633;
+            font-size: 26px;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FFCC33;
+        }
+
+        .article-content h3 {
+            color: #006633;
+            font-size: 20px;
+            margin: 25px 0 12px 0;
+        }
+
+        .article-content p {
+            margin-bottom: 18px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .article-content ul, .article-content ol {
+            margin-left: 30px;
+            margin-bottom: 18px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .article-content strong {
+            color: #006633;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #006633;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #FFCC33;
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #006633;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background: #004d26;
+        }
+
+        .paper-link {
+            background: #FFCC33;
+            color: #006633;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .paper-link:hover {
+            background: #e6b82e;
+        }
+
+        footer {
+            background: #006633;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #FFCC33;
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .article-header {
+                padding: 25px;
+            }
+
+            .article-title {
+                font-size: 28px;
+            }
+
+            .article-content {
+                padding: 25px;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="https://mraihan-gmu.github.io/" class="logo">Nishat Raihan</a>
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <ul>
+                    <li><a href="https://mraihan-gmu.github.io/">Home</a></li>
+                    <li><a href="resume.html">Resume/CV</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <a href="https://md-nishat.com/" class="old-site-btn" target="_blank">Old Website</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <a href="blog.html" class="back-link">← Back to Blog</a>
+
+        <div class="article-header">
+            <h1 class="article-title">Building mHumanEval: Lessons from Creating a 204-Language Benchmark</h1>
+            <div class="article-meta">
+                <span>📅 March 15, 2025</span>
+                <span>👤 Nishat Raihan</span>
+                <span>📖 8 min read</span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">Large Language Models</span>
+                <span class="tag">Benchmarking</span>
+                <span class="tag">Multilingual NLP</span>
+                <span class="tag">Code Generation</span>
+                <span class="tag">Research</span>
+            </div>
+        </div>
+
+        <article class="article-content">
+            <p class="quote">
+                "The limits of my language mean the limits of my world." — Ludwig Wittgenstein
+            </p>
+
+            <p>
+                When we set out to create mHumanEval, we had a simple question: <strong>How well do Large Language Models really understand code generation across different human languages?</strong> What started as a research curiosity evolved into one of the most comprehensive multilingual code generation benchmarks, spanning 204 natural languages and 25 programming languages, with 836,400 total prompts.
+            </p>
+
+            <p>
+                This blog post shares the technical journey, unexpected challenges, and key lessons from building this benchmark—a journey that taught us as much about the limitations of current LLMs as it did about the fascinating intersection of natural and programming languages.
+            </p>
+
+            <h2>The Genesis: Why Another Benchmark?</h2>
+
+            <p>
+                Existing code generation benchmarks like HumanEval and MBPP have been instrumental in advancing the field. However, they share a common limitation: <strong>they're almost exclusively in English</strong>. This creates several problems:
+            </p>
+
+            <ul>
+                <li><strong>English-centric bias:</strong> Models are primarily evaluated on their ability to understand English prompts, potentially missing how they perform with non-English speakers</li>
+                <li><strong>Limited generalization understanding:</strong> We don't know if strong performance in English translates to other languages</li>
+                <li><strong>Accessibility barriers:</strong> Non-English speaking developers may face disadvantages when using these tools</li>
+                <li><strong>Research gaps:</strong> The multilingual capabilities of code LLMs remain largely unexplored</li>
+            </ul>
+
+            <p>
+                With over 7,000 languages spoken worldwide and a growing global developer community, we needed a benchmark that reflects this linguistic diversity.
+            </p>
+
+            <h2>The Scale Challenge: 204 Languages</h2>
+
+            <p>
+                Deciding to support 204 languages was not a random choice. We wanted to cover:
+            </p>
+
+            <ul>
+                <li>All major programming communities worldwide</li>
+                <li>High-resource languages (English, Spanish, Chinese, etc.)</li>
+                <li>Mid-resource languages (Bengali, Vietnamese, Swahili, etc.)</li>
+                <li>Low-resource languages (Yoruba, Sundanese, Maori, etc.)</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Technical Challenge:</strong> How do you accurately translate coding prompts while preserving their semantic meaning, technical accuracy, and problem-solving requirements?
+            </div>
+
+            <p>
+                We couldn't rely on simple machine translation. A coding problem is not just descriptive text—it contains:
+            </p>
+
+            <ol>
+                <li>Technical specifications and constraints</li>
+                <li>Input/output examples that must remain consistent</li>
+                <li>Edge cases that need precise description</li>
+                <li>Domain-specific terminology</li>
+            </ol>
+
+            <h3>Our Translation Pipeline</h3>
+
+            <p>
+                We developed a multi-stage translation and verification pipeline:
+            </p>
+
+            <ol>
+                <li><strong>Initial Translation:</strong> Using state-of-the-art neural machine translation models (primarily GPT-4 and specialized translation APIs)</li>
+                <li><strong>Technical Verification:</strong> Ensuring that code examples, function names, and technical terms remain accurate</li>
+                <li><strong>Consistency Checks:</strong> Verifying that input/output examples are preserved correctly</li>
+                <li><strong>Native Speaker Review:</strong> For high-resource languages, we conducted spot-checks with native speakers who are also programmers</li>
+            </ol>
+
+            <h2>Surprising Findings</h2>
+
+            <p>
+                As we tested various LLMs on mHumanEval, several patterns emerged that challenged our assumptions:
+            </p>
+
+            <h3>1. The "English Anchor" Effect</h3>
+
+            <p>
+                Models showed a strong tendency to perform significantly better when prompts contained even small amounts of English text. For example, keeping variable names in English while translating descriptions improved performance by 15-20% on average across all non-English languages.
+            </p>
+
+            <h3>2. Script Matters More Than Language Family</h3>
+
+            <p>
+                We initially hypothesized that models would perform similarly on languages from the same family (e.g., Romance languages). However, we found that <strong>script type</strong> (Latin, Cyrillic, Arabic, Devanagari, etc.) was a better predictor of performance than linguistic family.
+            </p>
+
+            <h3>3. The Resource Paradox</h3>
+
+            <p>
+                Surprisingly, some mid-resource languages outperformed high-resource ones in specific programming domains. For instance, models performed better on Bengali prompts for algorithmic problems than on some European languages, possibly due to the prevalence of Bengali programmers in competitive programming communities.
+            </p>
+
+            <h3>4. Programming Language Transfer</h3>
+
+            <p>
+                Models showed interesting cross-lingual transfer: a model that struggled with Python prompts in Bengali performed better when asked to generate JavaScript, suggesting that the training data distribution affects multilingual code generation in complex ways.
+            </p>
+
+            <h2>Key Technical Decisions</h2>
+
+            <h3>Choosing the Programming Languages</h3>
+
+            <p>
+                We selected 25 programming languages to cover:
+            </p>
+
+            <ul>
+                <li><strong>Popular general-purpose languages:</strong> Python, JavaScript, Java, C++, C#, Go, Rust, Swift</li>
+                <li><strong>Web technologies:</strong> TypeScript, PHP, Ruby</li>
+                <li><strong>Functional languages:</strong> Haskell, Scala, Erlang, F#</li>
+                <li><strong>Systems languages:</strong> C, Rust, Assembly variants</li>
+                <li><strong>Emerging languages:</strong> Julia, Kotlin, Dart, Mojo</li>
+            </ul>
+
+            <h3>Evaluation Metrics</h3>
+
+            <p>
+                We use pass@k metrics (pass@1, pass@5, pass@10) as the primary evaluation criteria, where:
+            </p>
+
+            <ul>
+                <li><strong>pass@1:</strong> Percentage of problems solved in the first attempt</li>
+                <li><strong>pass@5:</strong> Percentage of problems solved within 5 attempts</li>
+                <li><strong>pass@10:</strong> Percentage of problems solved within 10 attempts</li>
+            </ul>
+
+            <p>
+                Additionally, we track:
+            </p>
+
+            <ul>
+                <li>Syntax correctness rates across languages</li>
+                <li>Runtime efficiency of generated solutions</li>
+                <li>Code quality metrics (readability, maintainability)</li>
+            </ul>
+
+            <h2>Lessons for the Research Community</h2>
+
+            <h3>1. Multilingual != Multilingual Understanding</h3>
+
+            <p>
+                Having training data in multiple languages doesn't guarantee true multilingual code generation capability. Models often rely on English as an "intermediate representation," which can introduce errors and biases.
+            </p>
+
+            <h3>2. Context Window Considerations</h3>
+
+            <p>
+                Different languages have different verbosity levels. A problem description that takes 200 tokens in English might take 300 in German or 180 in Chinese. This affects how models with limited context windows handle longer problems.
+            </p>
+
+            <h3>3. The Importance of Code-Switched Data</h3>
+
+            <p>
+                Real-world developers often mix languages in their comments and variable names. Benchmarks need to reflect this reality. We found that models trained on code-switched data performed better across the board.
+            </p>
+
+            <h3>4. Cultural Context in Problem Design</h3>
+
+            <p>
+                Some problems contain implicit cultural context that doesn't translate well. For example, problems involving dates, addresses, or measurement systems need careful handling to ensure fairness across cultures.
+            </p>
+
+            <h2>Challenges and Limitations</h2>
+
+            <p>
+                Despite our best efforts, mHumanEval has limitations:
+            </p>
+
+            <ul>
+                <li><strong>Translation quality variance:</strong> While we ensured high quality for major languages, some low-resource language translations may contain subtle errors</li>
+                <li><strong>Cultural equivalence:</strong> Some problems may be more familiar to certain cultural contexts</li>
+                <li><strong>Dynamic nature of languages:</strong> Both natural and programming languages evolve; the benchmark requires periodic updates</li>
+                <li><strong>Computational cost:</strong> Evaluating on 836,400 prompts is expensive, limiting accessibility for some researchers</li>
+            </ul>
+
+            <h2>Future Directions</h2>
+
+            <p>
+                The development of mHumanEval opens several exciting research directions:
+            </p>
+
+            <ol>
+                <li><strong>Fine-tuning strategies:</strong> How can we better adapt models for multilingual code generation?</li>
+                <li><strong>Cross-lingual transfer learning:</strong> Can we leverage high-resource languages to improve low-resource performance?</li>
+                <li><strong>Cultural adaptation:</strong> How do we make code generation tools more culturally aware?</li>
+                <li><strong>Real-world deployment:</strong> How does benchmark performance correlate with actual developer productivity across languages?</li>
+            </ol>
+
+            <h2>Open Source and Community</h2>
+
+            <p>
+                mHumanEval is completely open source. We believe that advancing multilingual AI for code generation requires community collaboration. The benchmark is available on GitHub, and we actively encourage:
+            </p>
+
+            <ul>
+                <li>Contributions for improving translations</li>
+                <li>Addition of new programming languages</li>
+                <li>Extensions to cover more natural languages</li>
+                <li>Development of better evaluation metrics</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Get Started:</strong> Access the full benchmark, code, and documentation on GitHub.</p>
+                <a href="https://github.com/mraihan-gmu/mHumanEval-Benchmark" class="paper-link" target="_blank">View on GitHub →</a>
+            </div>
+
+            <h2>Conclusion</h2>
+
+            <p>
+                Building mHumanEval taught us that creating truly multilingual AI systems is about more than just translation. It's about understanding how language shapes thought, how culture influences problem-solving, and how we can build tools that work for everyone, regardless of the language they speak.
+            </p>
+
+            <p>
+                The journey from 1 language to 204 languages wasn't just about scale—it was about inclusion. As AI systems become more integral to software development, ensuring they work equally well for developers worldwide isn't just a technical challenge; it's a moral imperative.
+            </p>
+
+            <p>
+                We hope mHumanEval serves as a stepping stone toward more equitable and accessible AI-powered development tools. The code generation revolution should be available to all 26 million developers worldwide, not just the English-speaking ones.
+            </p>
+
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 2px solid #e0e0e0;">
+                <h3>Read the Full Paper</h3>
+                <p>For technical details, experimental results, and comprehensive analysis, check out our full paper accepted at NAACL 2025.</p>
+                <a href="https://arxiv.org/pdf/2410.15037" class="paper-link" target="_blank">Read the Paper (PDF) →</a>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 5px;">
+                <p><strong>About the Author:</strong> Nishat Raihan is a PhD student at George Mason University researching large language models, multilingual NLP, and code generation. His work focuses on making AI tools more accessible and effective for developers worldwide.</p>
+            </div>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nishat Raihan | George Mason University</p>
+    </footer>
+</body>
+</html>
