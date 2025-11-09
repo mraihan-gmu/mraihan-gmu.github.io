@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishat Raihan - George Mason University</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #006633; /* GMU Green */
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #FFCC33; /* GMU Gold */
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFCC33;
+        }
+
+        /* Header Section */
+        .header-section {
+            background: white;
+            padding: 40px 20px;
+            border-bottom: 3px solid #006633;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+        }
+
+        .profile-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #006633;
+        }
+
+        .header-text h1 {
+            font-size: 32px;
+            color: #006633;
+            margin-bottom: 10px;
+        }
+
+        .header-text .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .university-logo {
+            margin-top: 15px;
+        }
+
+        .university-logo img {
+            height: 50px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .announcement {
+            background: #FFCC33;
+            color: #006633;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            border-left: 5px solid #006633;
+        }
+
+        .announcement a {
+            color: #006633;
+            text-decoration: underline;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #006633;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FFCC33;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #006633;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* News Items */
+        .news-year {
+            margin-bottom: 25px;
+        }
+
+        .news-item {
+            margin: 10px 0 10px 20px;
+            padding-left: 15px;
+            border-left: 3px solid #FFCC33;
+        }
+
+        /* Publications */
+        .publication {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #006633;
+            margin-bottom: 8px;
+        }
+
+        .pub-authors {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .pub-venue {
+            color: #000;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .pub-description {
+            margin: 10px 0 15px 0;
+            color: #444;
+        }
+
+        .pub-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #006633;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #004d26;
+        }
+
+        .btn-secondary {
+            background: #FFCC33;
+            color: #006633;
+        }
+
+        .btn-secondary:hover {
+            background: #e6b82e;
+        }
+
+        .btn-outline {
+            background: white;
+            color: #006633;
+            border: 2px solid #006633;
+        }
+
+        .btn-outline:hover {
+            background: #006633;
+            color: white;
+        }
+
+        /* Links */
+        a {
+            color: #006633;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #006633;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #FFCC33;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Nishat Raihan</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume/CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header with Photo -->
+    <div class="header-section">
+        <div class="header-content">
+            <div class="profile-photo">
+                <!-- Replace this src with your actual photo -->
+                <img src="media/me.png" alt="Nishat Raihan">
+            </div>
+            <div class="header-text">
+                <h1>Nishat Raihan</h1>
+                <p class="title">CS PhD Student</p>
+                <p class="title">Department of Computer Science</p>
+                <div class="university-logo">
+                    <!-- Replace with actual GMU logo -->
+                    <a href="https://www.gmu.edu" target="_blank">
+                        <img src="media/logo.png" alt="George Mason University">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="announcement">
+            🎉 TigerLLM is accepted in <a href="https://2025.aclweb.org" target="_blank">ACL Main (2025)</a> 🎉
+        </div>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a CS PhD Student at <a href="https://www.gmu.edu" target="_blank">George Mason University</a>. My research focuses on Large Language Models, particularly in code generation, multilingual evaluation, and applications in CS education.</p>
+        </section>
+
+        <!-- News Section -->
+        <section id="news">
+            <h2>Recent News</h2>
+            
+            <div class="news-year">
+                <h3>2025</h3>
+                <div class="news-item">
+                    <strong>May</strong> – 'TigerLLM' is accepted in <a href="https://2025.aclweb.org" target="_blank">ACL (2025)</a>. 🎉
+                </div>
+                <div class="news-item">
+                    <strong>Apr</strong> – Completed my PhD Proposal. 🎓
+                </div>
+                <div class="news-item">
+                    <strong>Mar</strong> – 'LLMs in CS Education' is published in <a href="https://sigcse2025.sigcse.org" target="_blank">SIGCSE-TS (2025)</a>. 📜
+                </div>
+                <div class="news-item">
+                    <strong>Feb</strong> – 150+ Citations on <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>. 📊
+                </div>
+                <div class="news-item">
+                    <strong>Jan</strong> – mHumanEval (Proceedings) & MojoBench (Findings) are accepted in <a href="https://2025.naacl.org" target="_blank">NAACL-2025</a>. 📜
+                </div>
+            </div>
+
+            <div class="news-year">
+                <h3>2024</h3>
+                <div class="news-item">
+                    <strong>Dec</strong> – Completed my <a href="https://cs.gmu.edu/prospective-students/ms-programs/ms-in-cs/" target="_blank">Master of Science (MS)</a> from George Mason University. 🎓
+                </div>
+                <div class="news-item">
+                    <strong>Oct</strong> – 'Code LLMs: A Taxonomy-based Survey' is published in <a href="https://www3.cs.stonybrook.edu/~ieeebigdata2024/" target="_blank">IEEE Big Data-2024</a>. 📜
+                </div>
+                <div class="news-item">
+                    <strong>Aug</strong> – 'CSEPrompts' is published in ISMIS 2024. 📜
+                </div>
+                <div class="news-item">
+                    <strong>May</strong> – 'MentalHelp' is published in <a href="https://lrec-coling-2024.org" target="_blank">LREC-COLING (2024)</a>. 📜
+                </div>
+                <div class="news-item">
+                    <strong>Apr</strong> – Passed my PhD Comprehensive Exam at George Mason University. 🎓
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Selected Publications</h2>
+
+            <div class="publication">
+                <div class="pub-title">mHumanEval: A massively multilingual benchmark for code generation</div>
+                <div class="pub-authors">Author names here</div>
+                <div class="pub-venue">NAACL 2025 (Main Conference)</div>
+                <div class="pub-description">
+                    A massively multilingual (204 languages) benchmark for evaluating Large Language Models' code generation capabilities.
+                </div>
+                <div class="pub-buttons">
+                    <a href="https://arxiv.org/abs/2410.15037" class="btn btn-primary" target="_blank">Paper</a>
+                    <a href="#" class="btn btn-secondary">PDF</a>
+                    <a href="#" class="btn btn-outline">Code</a>
+                    <a href="#" class="btn btn-outline">Project Page</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">MojoBench: A complete LLM framework for Mojo</div>
+                <div class="pub-authors">Author names here</div>
+                <div class="pub-venue">NAACL 2025 (Findings)</div>
+                <div class="pub-description">
+                    A complete LLM framework including corpus, instruction-dataset, and a model that achieves state-of-the-art performance in Mojo code generation.
+                </div>
+                <div class="pub-buttons">
+                    <a href="https://arxiv.org/abs/2410.17736" class="btn btn-primary" target="_blank">Paper</a>
+                    <a href="#" class="btn btn-secondary">PDF</a>
+                    <a href="#" class="btn btn-outline">Code</a>
+                    <a href="#" class="btn btn-outline">Dataset</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">LLMs in CS Education: A Systematic Literature Review</div>
+                <div class="pub-authors">Author names here</div>
+                <div class="pub-venue">SIGCSE-TS 2025</div>
+                <div class="pub-description">
+                    A systematic literature review examining 125 papers on how LLMs are used and perceived in computer science education.
+                </div>
+                <div class="pub-buttons">
+                    <a href="https://dl.acm.org/doi/abs/10.1145/3641554.3701863" class="btn btn-primary" target="_blank">Paper</a>
+                    <a href="#" class="btn btn-secondary">PDF</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">Code LLMs: A Taxonomy-based Survey</div>
+                <div class="pub-authors">Author names here</div>
+                <div class="pub-venue">IEEE Big Data 2024</div>
+                <div class="pub-description">
+                    A comprehensive taxonomy-based survey on Code LLMs, covering evaluation benchmarks, corpora, limitations, and open problems.
+                </div>
+                <div class="pub-buttons">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10826108" class="btn btn-primary" target="_blank">Paper</a>
+                    <a href="#" class="btn btn-secondary">PDF</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">CSEPrompts: A Framework for Evaluating LLMs in CS Education</div>
+                <div class="pub-authors">Author names here</div>
+                <div class="pub-venue">ISMIS 2024</div>
+                <div class="pub-description">
+                    A framework with hundreds of programming prompts and MCQs from introductory CS courses, evaluating LLM performance in Python code generation and CS fundamentals.
+                </div>
+                <div class="pub-buttons">
+                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-62700-2_5" class="btn btn-primary" target="_blank">Paper</a>
+                    <a href="#" class="btn btn-secondary">PDF</a>
+                    <a href="#" class="btn btn-outline">Code</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">MentalHelp Dataset</div>
+                <div class="pub-authors">Author names here</div>
+                <div class="pub-venue">LREC-COLING 2024</div>
+                <div class="pub-description">
+                    A comprehensive dataset for mental health support research.
+                </div>
+                <div class="pub-buttons">
+                    <a href="https://aclanthology.org/2024.lrec-main.977/" class="btn btn-primary" target="_blank">Paper</a>
+                    <a href="#" class="btn btn-secondary">PDF</a>
+                    <a href="#" class="btn btn-outline">Dataset</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p><strong>Email:</strong> [your-email]@gmu.edu</p>
+            <p><strong>Office:</strong> [Your office location]</p>
+            <p><strong>Links:</strong></p>
+            <ul>
+                <li><a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+                <li><a href="#" target="_blank">GitHub</a></li>
+                <li><a href="#" target="_blank">LinkedIn</a></li>
+                <li><a href="#" target="_blank">Twitter</a></li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            
+            <div style="margin-bottom: 20px;">
+                <p><strong>Email:</strong> <a href="mailto:nishat@gmu.edu">nishat@gmu.edu</a></p>
+                <p><strong>Office:</strong> Engineering Building, Room XXX, George Mason University</p>
+            </div>
+
+            <h3 style="color: #006633; font-size: 18px; margin-top: 25px; margin-bottom: 15px;">Professional Networks</h3>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en&oi=ao" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #006633; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#004d26'" onmouseout="this.style.background='#006633'">
+                    <span>🎓</span>
+                    <span>Google Scholar</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #006633; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#004d26'" onmouseout="this.style.background='#006633'">
+                    <span>💻</span>
+                    <span>GitHub</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #FFCC33; color: #006633; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#e6b82e'" onmouseout="this.style.background='#FFCC33'">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #FFCC33; color: #006633; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#e6b82e'" onmouseout="this.style.background='#FFCC33'">
+                    <span>🐦</span>
+                    <span>Twitter/X</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #006633; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#004d26'" onmouseout="this.style.background='#006633'">
+                    <span>📝</span>
+                    <span>ORCID</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #006633; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#004d26'" onmouseout="this.style.background='#006633'">
+                    <span>📚</span>
+                    <span>ResearchGate</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nishat Raihan | George Mason University</p>
+    </footer>
+</body>
+</html>

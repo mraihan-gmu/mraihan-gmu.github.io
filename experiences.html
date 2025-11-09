@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences - Nishat Raihan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #006633;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #FFCC33;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFCC33;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .page-header {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-top: 4px solid #006633;
+        }
+
+        .page-header h1 {
+            color: #006633;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #006633;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FFCC33;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .exp-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #006633;
+        }
+
+        .exp-date {
+            color: #666;
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .exp-company {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .exp-company a {
+            color: #006633;
+            text-decoration: none;
+        }
+
+        .exp-company a:hover {
+            text-decoration: underline;
+        }
+
+        .exp-description {
+            margin-top: 10px;
+        }
+
+        .exp-description ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .exp-description li {
+            margin-bottom: 8px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            color: #006633;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            border: 1px solid #e0e0e0;
+        }
+
+        footer {
+            background: #006633;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #FFCC33;
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .exp-header {
+                flex-direction: column;
+            }
+
+            .exp-date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Nishat Raihan</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume/CV</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Professional Experience</h1>
+            <p>Research, Teaching, and Industry Experience</p>
+        </div>
+
+        <!-- Research Experience -->
+        <section>
+            <h2>Research Experience</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Graduate Research Assistant</div>
+                        <div class="exp-company"><a href="https://www.gmu.edu" target="_blank">George Mason University</a></div>
+                    </div>
+                    <div class="exp-date">Aug 2022 - Present</div>
+                </div>
+                <div class="exp-description">
+                    <p><strong>Advisor:</strong> [Advisor Name] | <strong>Lab:</strong> [Lab Name]</p>
+                    <p>Focus: Large Language Models, Code Generation, Multilingual NLP</p>
+                    <ul>
+                        <li>Developed mHumanEval, a massively multilingual benchmark covering 204 languages for evaluating LLM code generation capabilities</li>
+                        <li>Created MojoBench, the first comprehensive LLM framework for Mojo programming language, achieving state-of-the-art results</li>
+                        <li>Conducted systematic literature review on LLMs in CS education, analyzing 125 papers and identifying key trends</li>
+                        <li>Published 6+ papers in top-tier conferences (ACL, NAACL, SIGCSE, IEEE Big Data)</li>
+                        <li>Collaborated with industry partners on AI/ML research projects</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">LLMs</span>
+                    <span class="tag">Code Generation</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">PyTorch</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Research Intern</div>
+                        <div class="exp-company"><a href="#" target="_blank">[Company/Institution Name]</a></div>
+                    </div>
+                    <div class="exp-date">Summer 2024</div>
+                </div>
+                <div class="exp-description">
+                    <p><strong>Project:</strong> [Project Name]</p>
+                    <ul>
+                        <li>Developed novel evaluation metrics for code generation models</li>
+                        <li>Built datasets and benchmarks for multilingual programming languages</li>
+                        <li>Collaborated with cross-functional teams on AI research initiatives</li>
+                        <li>Published research findings at major conference</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Research</span>
+                    <span class="tag">Evaluation</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Undergraduate Research Assistant</div>
+                        <div class="exp-company"><a href="#" target="_blank">[Previous University]</a></div>
+                    </div>
+                    <div class="exp-date">Jan 2019 - May 2020</div>
+                </div>
+                <div class="exp-description">
+                    <p><strong>Advisor:</strong> [Professor Name]</p>
+                    <ul>
+                        <li>Conducted research on mental health support systems using NLP</li>
+                        <li>Built and annotated datasets for emotion recognition</li>
+                        <li>Implemented machine learning models for text classification</li>
+                        <li>Co-authored paper accepted at LREC-COLING 2024</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">NLP</span>
+                    <span class="tag">Mental Health</span>
+                    <span class="tag">Dataset Creation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching Experience -->
+        <section>
+            <h2>Teaching Experience</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Teaching Assistant - CS 471: Operating Systems</div>
+                        <div class="exp-company"><a href="https://www.gmu.edu" target="_blank">George Mason University</a></div>
+                    </div>
+                    <div class="exp-date">Spring 2024</div>
+                </div>
+                <div class="exp-description">
+                    <p><strong>Instructor:</strong> [Professor Name] | <strong>Students:</strong> 120+</p>
+                    <ul>
+                        <li>Led weekly lab sessions on process management, memory allocation, and file systems</li>
+                        <li>Graded assignments and exams, provided detailed feedback to students</li>
+                        <li>Held office hours to help students with course materials and projects</li>
+                        <li>Received excellent teaching evaluations (4.8/5.0)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Teaching Assistant - CS 310: Data Structures</div>
+                        <div class="exp-company"><a href="https://www.gmu.edu" target="_blank">George Mason University</a></div>
+                    </div>
+                    <div class="exp-date">Fall 2023</div>
+                </div>
+                <div class="exp-description">
+                    <p><strong>Instructor:</strong> [Professor Name] | <strong>Students:</strong> 150+</p>
+                    <ul>
+                        <li>Assisted with course material on arrays, linked lists, trees, graphs, and algorithms</li>
+                        <li>Conducted review sessions before exams covering key concepts</li>
+                        <li>Developed supplementary materials and practice problems</li>
+                        <li>Mentored students on programming assignments in Java</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Teaching Assistant - CS 112: Intro to Computer Programming</div>
+                        <div class="exp-company"><a href="https://www.gmu.edu" target="_blank">George Mason University</a></div>
+                    </div>
+                    <div class="exp-date">Spring 2023</div>
+                </div>
+                <div class="exp-description">
+                    <p><strong>Instructor:</strong> [Professor Name] | <strong>Students:</strong> 100+</p>
+                    <ul>
+                        <li>Introduced students to fundamental programming concepts in Python</li>
+                        <li>Led lab sessions on variables, loops, functions, and data structures</li>
+                        <li>Provided one-on-one tutoring for struggling students</li>
+                        <li>Assisted in developing course assignments and autograders</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Experience -->
+        <section>
+            <h2>Industry Experience</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Software Engineering Intern</div>
+                        <div class="exp-company"><a href="#" target="_blank">[Company Name]</a></div>
+                    </div>
+                    <div class="exp-date">Summer 2021</div>
+                </div>
+                <div class="exp-description">
+                    <p><strong>Team:</strong> [Team Name]</p>
+                    <ul>
+                        <li>Developed and deployed machine learning models for production systems</li>
+                        <li>Built APIs and backend services using Python and Flask</li>
+                        <li>Collaborated with product and design teams on feature development</li>
+                        <li>Optimized model inference time by 40% through code refactoring</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">ML Engineering</span>
+                    <span class="tag">API Development</span>
+                    <span class="tag">Flask</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Data Science Intern</div>
+                        <div class="exp-company"><a href="#" target="_blank">[Company Name]</a></div>
+                    </div>
+                    <div class="exp-date">Summer 2020</div>
+                </div>
+                <div class="exp-description">
+                    <p><strong>Team:</strong> Analytics Team</p>
+                    <ul>
+                        <li>Analyzed large datasets to extract insights and support business decisions</li>
+                        <li>Built predictive models for customer behavior analysis</li>
+                        <li>Created dashboards and visualizations using Tableau and Python</li>
+                        <li>Presented findings to stakeholders and leadership team</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Tableau</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Service -->
+        <section>
+            <h2>Leadership & Service</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">President, CS Graduate Student Association</div>
+                        <div class="exp-company">George Mason University</div>
+                    </div>
+                    <div class="exp-date">2024 - Present</div>
+                </div>
+                <div class="exp-description">
+                    <ul>
+                        <li>Led organization of 50+ graduate students in Computer Science department</li>
+                        <li>Organized workshops, seminars, and networking events</li>
+                        <li>Represented graduate student interests to faculty and administration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-title">Volunteer Reviewer</div>
+                        <div class="exp-company">ACL, EMNLP, NAACL, NeurIPS, ICML</div>
+                    </div>
+                    <div class="exp-date">2024 - Present</div>
+                </div>
+                <div class="exp-description">
+                    <ul>
+                        <li>Reviewed 20+ papers for top-tier AI/ML conferences</li>
+                        <li>Provided constructive feedback to improve research quality</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Nishat Raihan | George Mason University</p>
+    </footer>
+</body>
+</html>
