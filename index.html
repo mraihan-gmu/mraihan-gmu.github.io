@@ -58,6 +58,20 @@
             color: #FFCC33;
         }
 
+        .old-site-btn {
+            background: #FFCC33;
+            color: #006633;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .old-site-btn:hover {
+            background: #e6b82e;
+            color: #006633 !important;
+        }
+
         /* Header Section */
         .header-section {
             background: white;
@@ -286,15 +300,18 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="#" class="logo">Nishat Raihan</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume/CV</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="experiences.html">Experiences</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
+            <a href="index.html" class="logo">Nishat Raihan</a>
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume/CV</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="experiences.html">Experiences</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <a href="https://md-nishat.com/" class="old-site-btn" target="_blank">Old Website</a>
+            </div>
         </div>
     </nav>
 
@@ -324,6 +341,36 @@
         <div class="announcement">
             🎉 TigerLLM is accepted in <a href="https://2025.aclweb.org" target="_blank">ACL Main (2025)</a> 🎉
         </div>
+
+        <!-- Professional Networks Section - Centered Buttons -->
+        <section id="networks">
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; align-items: center;">
+                <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en&oi=ao" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: white; color: #006633; text-decoration: none; border-radius: 5px; border: 2px solid #006633; transition: all 0.3s; font-weight: bold;" target="_blank" onmouseover="this.style.background='#006633'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#006633'">
+                    <span>🎓</span>
+                    <span>Google Scholar</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: white; color: #006633; text-decoration: none; border-radius: 5px; border: 2px solid #006633; transition: all 0.3s; font-weight: bold;" target="_blank" onmouseover="this.style.background='#006633'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#006633'">
+                    <span>💻</span>
+                    <span>GitHub</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: white; color: #006633; text-decoration: none; border-radius: 5px; border: 2px solid #006633; transition: all 0.3s; font-weight: bold;" target="_blank" onmouseover="this.style.background='#006633'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#006633'">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: white; color: #006633; text-decoration: none; border-radius: 5px; border: 2px solid #006633; transition: all 0.3s; font-weight: bold;" target="_blank" onmouseover="this.style.background='#006633'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#006633'">
+                    <span>🤗</span>
+                    <span>HuggingFace</span>
+                </a>
+                
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: white; color: #006633; text-decoration: none; border-radius: 5px; border: 2px solid #006633; transition: all 0.3s; font-weight: bold;" target="_blank" onmouseover="this.style.background='#006633'; this.style.color='white'" onmouseout="this.style.background='white'; this.style.color='#006633'">
+                    <span>📚</span>
+                    <span>ResearchGate</span>
+                </a>
+            </div>
+        </section>
 
         <!-- About Section -->
         <section id="about">
@@ -475,50 +522,6 @@
                 <li><a href="#" target="_blank">LinkedIn</a></li>
                 <li><a href="#" target="_blank">Twitter</a></li>
             </ul>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact</h2>
-            
-            <div style="margin-bottom: 20px;">
-                <p><strong>Email:</strong> <a href="mailto:nishat@gmu.edu">nishat@gmu.edu</a></p>
-                <p><strong>Office:</strong> Engineering Building, Room XXX, George Mason University</p>
-            </div>
-
-            <h3 style="color: #006633; font-size: 18px; margin-top: 25px; margin-bottom: 15px;">Professional Networks</h3>
-            
-            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en&oi=ao" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #006633; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#004d26'" onmouseout="this.style.background='#006633'">
-                    <span>🎓</span>
-                    <span>Google Scholar</span>
-                </a>
-                
-                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #006633; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#004d26'" onmouseout="this.style.background='#006633'">
-                    <span>💻</span>
-                    <span>GitHub</span>
-                </a>
-                
-                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #FFCC33; color: #006633; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#e6b82e'" onmouseout="this.style.background='#FFCC33'">
-                    <span>💼</span>
-                    <span>LinkedIn</span>
-                </a>
-                
-                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #FFCC33; color: #006633; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#e6b82e'" onmouseout="this.style.background='#FFCC33'">
-                    <span>🐦</span>
-                    <span>Twitter/X</span>
-                </a>
-                
-                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #006633; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#004d26'" onmouseout="this.style.background='#006633'">
-                    <span>📝</span>
-                    <span>ORCID</span>
-                </a>
-                
-                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; background: #006633; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s;" target="_blank" onmouseover="this.style.background='#004d26'" onmouseout="this.style.background='#006633'">
-                    <span>📚</span>
-                    <span>ResearchGate</span>
-                </a>
-            </div>
         </section>
     </div>
 
