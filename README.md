@@ -7,19 +7,20 @@ step, deployed through GitHub Pages with the custom domain in `CNAME`.
 ## Structure
 
 ```
-index.html              Home: profile, about, research, selected publications
+index.html              Home: profile, recent news, about, collaboration, research, publications
 publications.html       Full publication list by category
 education.html          Degrees
 service.html            Organizing committees, reviewing, leadership, funding
 experience.html         Research, industry, teaching, mentoring
 honors-awards.html      Awards and bibliometrics
 talks.html              Invited talks
-personal.html           Notes beyond the CV, plus a Writing section
-blog.html               Blog index (linked from the Personal page)
+personal.html           Books, Movie Theatre, Anime, Sports, Writing (left sub-nav)
+blog.html               Blog index
 blog-post-mhumaneval.html   First blog post
 assets/style.css        Shared design system (Notre Dame palette, light/dark)
-assets/main.js          Theme toggle and mobile menu
+assets/main.js          Theme toggle, mobile menu, personal sub-tabs
 media/                  cv.pdf, profile.jpg, logo.png
+media/logos/            Institution logo tiles (PNG)
 CNAME                   Custom domain (md-nishat.com)
 .nojekyll               Tells GitHub Pages to serve files as-is
 ```
@@ -30,8 +31,7 @@ Talks, Personal.
 
 ## Deploy
 
-The Git remote and `main` branch are already configured. To publish any
-change:
+The Git remote and `main` branch are already configured. To publish:
 
 ```bash
 git add -A
@@ -50,30 +50,35 @@ python3 -m http.server 8000
 
 ## Common edits
 
-**Replace the CV.** Overwrite `media/cv.pdf`. The CV tab and the buttons
-on the Publications page point at that file.
+**Institution logos.** The files in `media/logos/` (`nd.png`, `gmu.png`,
+`iut.png`, `samsung.png`, `uttara.png`, `duke.png`, `fresno.png`,
+`pvamu.png`, `award.png`) are clean brand-colored placeholders. To use an
+official logo, replace the file with the real PNG using the **same
+filename**. Square images (about 256x256) look best. No HTML changes are
+needed; Education, Experience, Talks, and Honors pick up the new file
+automatically.
+
+**Replace the CV.** Overwrite `media/cv.pdf`.
 
 **Replace the profile photo.** Overwrite `media/profile.jpg` with a square
-image (about 640x640 is enough).
+image (about 640x640).
 
-**Swap an institution badge for a real logo.** The badges are CSS, defined
-once in `assets/style.css` under the `.crest` rules. To use an official
-logo image instead, drop the file in `media/` and replace the matching
-`<div class="crest ...">XX</div>` with an `<img>` in that page.
+**Add a personal section item.** Open `personal.html`, find the relevant
+`<div class="ppanel" id="panel-...">`, and add an `<li>` to the
+`<ul class="plist">`. To add a whole new sub-tab, add one
+`<button class="ptab-btn" data-tab="x">` in `.ptabs` and a matching
+`<div class="ppanel" id="panel-x">`; the script wires it up by id.
 
 **Add a blog post.**
 
-1. Copy `blog-post-mhumaneval.html` to a new file, for example
-   `blog-post-yourtopic.html`.
-2. Replace the title, date, and article body. Keep the surrounding
-   nav, footer, and `<article>` structure.
-3. In `blog.html`, add another `<article class="post-card">` block
-   that links to the new file. Use the existing post as the template.
+1. Copy `blog-post-mhumaneval.html` to a new file.
+2. Replace the title, date, and article body; keep the nav, footer,
+   and `<article>` structure.
+3. Add another `<article class="post-card">` block in `blog.html`.
 
 ## Notes
 
-- The dashes in date ranges (for example `Aug 2026 – 2028`) are en
-  dashes, which is the correct typography for ranges. There are no em
-  dashes anywhere in the site.
+- Dashes in date ranges (for example `Aug 2026 – 2028`) are en dashes,
+  the correct typography for ranges. There are no em dashes anywhere.
 - Dark mode follows the system setting and can be toggled; the choice
   is stored in the browser.
