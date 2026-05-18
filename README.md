@@ -7,7 +7,7 @@ step, deployed through GitHub Pages with the custom domain in `CNAME`.
 ## Structure
 
 ```
-index.html              Home: profile, recent news, about, collaboration, research, publications
+index.html              Home: profile + recent news (left), about, collaboration, research, selected publications
 publications.html       Full publication list by category
 education.html          Degrees
 service.html            Organizing committees, reviewing, leadership, funding
@@ -27,7 +27,7 @@ CNAME                   Custom domain (md-nishat.com)
 
 The top navigation is identical on every page: Home, Publications,
 Education, Service, Experience, Honors & Awards, CV (the PDF in `media/`),
-Talks, Personal.
+Talks, Personal. It collapses to a single menu button below 1180px wide.
 
 ## Deploy
 
@@ -63,8 +63,11 @@ automatically.
 **Replace the profile photo.** Overwrite `media/profile.jpg` with a square
 image (about 640x640).
 
+**Recent news** lives in the left column of `index.html` inside
+`<div class="profile-news">`. Add or edit `<div class="pn-item">` rows.
+
 **Add a personal section item.** Open `personal.html`, find the relevant
-`<div class="ppanel" id="panel-...">`, and add an `<li>` to the
+`<div class="ppanel" id="panel-...">`, and add an `<li>` to a
 `<ul class="plist">`. To add a whole new sub-tab, add one
 `<button class="ptab-btn" data-tab="x">` in `.ptabs` and a matching
 `<div class="ppanel" id="panel-x">`; the script wires it up by id.
