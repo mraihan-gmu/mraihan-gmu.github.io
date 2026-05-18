@@ -1,731 +1,439 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Nishat Raihan</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.4;
-            color: #333;
-            background: #f5f5f5;
-            font-size: 14px;
-        }
-
-        /* Navigation Bar */
-        nav {
-            background: #006633;
-            padding: 12px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            color: #FFCC33;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #FFCC33;
-        }
-
-        .old-site-btn {
-            background: #FFCC33;
-            color: #006633;
-            padding: 6px 14px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .old-site-btn:hover {
-            background: #e6b82e;
-            color: #006633 !important;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .page-header {
-            background: white;
-            padding: 20px 25px;
-            margin-bottom: 25px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-top: 4px solid #006633;
-        }
-
-        .page-header h1 {
-            color: #006633;
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
-
-        .stats {
-            display: flex;
-            gap: 25px;
-            margin-top: 15px;
-        }
-
-        .stat-item {
-            background: #f8f8f8;
-            padding: 12px 18px;
-            border-radius: 5px;
-            border-left: 4px solid #FFCC33;
-        }
-
-        .stat-item strong {
-            color: #006633;
-            font-size: 20px;
-            display: block;
-        }
-
-        .stat-item span {
-            font-size: 13px;
-        }
-
-        section {
-            background: white;
-            padding: 20px 25px;
-            margin-bottom: 25px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #006633;
-            font-size: 20px;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #FFCC33;
-        }
-
-        .publication {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .publication:last-child {
-            border-bottom: none;
-        }
-
-        .pub-title {
-            font-size: 15px;
-            font-weight: bold;
-            color: #006633;
-            margin-bottom: 5px;
-            line-height: 1.3;
-        }
-
-        .pub-authors {
-            color: #666;
-            margin-bottom: 4px;
-            font-size: 13px;
-        }
-
-        .pub-venue {
-            color: #000;
-            font-style: italic;
-            margin-bottom: 8px;
-            font-size: 13px;
-        }
-
-        .pub-venue .badge {
-            background: #006633;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 11px;
-            font-style: normal;
-            margin-left: 8px;
-        }
-
-        .pub-description {
-            margin: 8px 0 10px 0;
-            color: #444;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-
-        .pub-buttons {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 13px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: #006633;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #004d26;
-        }
-
-        .btn-secondary {
-            background: #FFCC33;
-            color: #006633;
-        }
-
-        .btn-secondary:hover {
-            background: #e6b82e;
-        }
-
-        .btn-outline {
-            background: white;
-            color: #006633;
-            border: 2px solid #006633;
-        }
-
-        .btn-outline:hover {
-            background: #006633;
-            color: white;
-        }
-
-        footer {
-            background: #006633;
-            color: white;
-            text-align: center;
-            padding: 18px;
-            margin-top: 30px;
-            font-size: 14px;
-        }
-
-        footer a {
-            color: #FFCC33;
-        }
-
-        @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .stats {
-                flex-direction: column;
-                gap: 12px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications · Nishat Raihan</title>
+<meta name="description" content="Publications by Nishat Raihan: journal articles, conference and workshop papers, and preprints on Code LLMs and multilingual NLP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Spline+Sans:wght@300..600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/main.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="https://mraihan-gmu.github.io/" class="logo">Nishat Raihan</a>
-            <div style="display: flex; align-items: center; gap: 25px;">
-                <ul>
-                    <li><a href="https://mraihan-gmu.github.io/">Home</a></li>
-                    <li><a href="resume.html">Resume/CV</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="page-header">
-            <h1>Publications</h1>
-            <div class="stats">
-                <div class="stat-item">
-                    <strong>40+</strong>
-                    <span>Publications</span>
-                </div>
-                <div class="stat-item">
-                    <strong>504+</strong>
-                    <span>Citations</span>
-                </div>
-                <div class="stat-item">
-                    <strong>12</strong>
-                    <span>h-index</span>
-                </div>
-                <div class="stat-item">
-                    <strong>13</strong>
-                    <span>i10-index</span>
-                </div>
-            </div>
-            <p style="margin-top: 15px;">
-                <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en&oi=ao" target="_blank" style="color: #006633;">View on Google Scholar →</a>
-            </p>
-        </div>
-
-        <!-- 2026 Publications -->
-        <section>
-            <h2>2026</h2>
-
-            <div class="publication">
-                <div class="pub-title">Large Language Models for Mental Health: A Multilingual Evaluation</div>
-                <div class="pub-authors">Nishat Raihan, Sadiya Sayara Chowdhury Puspo, Ana-Maria Bucur, Stevie Chancellor, Marcos Zampieri</div>
-                <div class="pub-venue">
-                    The Second Workshop on Language Models for Low-Resource Languages (LoResLM 2026 @ EACL)
-                    <span class="badge">Accepted</span>
-                </div>
-                <div class="pub-description">
-                    An evaluation of proprietary and open-source LLMs on eight mental health datasets across multiple languages in zero-shot, few-shot, and fine-tuned settings, revealing competitive F1 scores but lower performance on machine-translated data with variation by language and typology.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/abs/2602.02440" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">CodeGuard: Improving LLM Guardrails in CS Education</div>
-                <div class="pub-authors">Nishat Raihan, Noah Erdachew, Jayoti Devi, Joanna C. S. Santos, Marcos Zampieri</div>
-                <div class="pub-venue">
-                    Findings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2026 - Findings)
-                    <span class="badge">Accepted</span>
-                </div>
-                <div class="pub-description">
-                    Existing LLM guardrails fail in CS education. CodeGuard provides a taxonomy, 8K prompt dataset, and PromptShield (fine-tuned RoBERTa) that achieves 0.93 F1, cutting harmful code completions by 30-65% while preserving legitimate coding assistance.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://soon" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2025 Publications -->
-        <section>
-            <h2>2025</h2>
-
-            <div class="publication">
-                <div class="pub-title">TigerLLM - A Family of Bangla Large Language Models</div>
-                <div class="pub-authors">Nishat Raihan, Marcos Zampieri</div>
-                <div class="pub-venue">
-                    The 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025)
-                </div>
-                <div class="pub-description">
-                    The first and state-of-the-art family of large language models specifically designed for the Bangla language, advancing the state-of-the-art in Bangla NLP.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://aclanthology.org/2025.acl-short.69.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                    <a href="https://github.com/mraihan-gmu/TigerLLM" class="btn btn-outline" target="_blank">Code</a>
-                    <a href="https://huggingface.co/md-nishat-008/TigerLLM-1B-it" class="btn btn-outline" target="_blank">Model</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">mHumanEval - A Multilingual Benchmark to Evaluate Large Language Models for Code Generation</div>
-                <div class="pub-authors">Nishat Raihan, Antonios Anastasopoulos, Marcos Zampieri</div>
-                <div class="pub-venue">Proceedings of The Nations of the Americas Chapter of the Association for Computational Linguistics (NAACL 2025)</div>
-                <div class="pub-description">
-                    A massively multilingual (204 languages) benchmark for evaluating Large Language Models' code generation capabilities across diverse programming languages, featuring 836,400 coding prompts across 25 programming languages.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://aclanthology.org/2025.naacl-long.570.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                    <a href="https://github.com/mraihan-gmu/mHumanEval-Benchmark" class="btn btn-outline" target="_blank">Code</a>
-                    <a href="https://huggingface.co/datasets/md-nishat-008/mHumanEval-Benchmark" class="btn btn-outline" target="_blank">Dataset</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MojoBench: Language Modeling and Benchmarks for Mojo</div>
-                <div class="pub-authors">Nishat Raihan, Joanna C. S. Santos, Marcos Zampieri</div>
-                <div class="pub-venue">Findings of The Nations of the Americas Chapter of the Association for Computational Linguistics (NAACL 2025 - Findings)</div>
-                <div class="pub-description">
-                    A complete LLM framework including corpus (6.5M tokens), instruction datasets, and a model that achieves state-of-the-art performance in Mojo code generation.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://aclanthology.org/2025.findings-naacl.230.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                    <a href="https://github.com/mraihan-gmu/MojoBench" class="btn btn-outline" target="_blank">Code</a>
-                    <a href="https://huggingface.co/md-nishat-008/Mojo-Coder-it" class="btn btn-outline" target="_blank">Model</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">On the Performance of Large Language Models on Introductory Programming Assignments</div>
-                <div class="pub-authors">Nishat Raihan, Dhiman Goswami, Sadiya Sayara Chowdhury Puspo, Mohammed Latif Siddiq, Christian Newman, Tharindu Ranasinghe, Joanna Santos, Marcos Zampieri</div>
-                <div class="pub-venue">Journal of Intelligent Information Systems, Springer (2025)</div>
-                <div class="pub-description">
-                    An extended evaluation framework (CSEPrompts 2.0) with 219 programming prompts and 100 MCQs, comprehensively assessing eight LLMs on introductory CS and programming course assignments.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://link.springer.com/article/10.1007/s10844-025-00968-y" class="btn btn-primary" target="_blank">Paper</a>
-                    <a href="https://github.com/mraihan-gmu/CSEPrompts" class="btn btn-outline" target="_blank">Code</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Large Language Models in Computer Science Education: A Systematic Literature Review</div>
-                <div class="pub-authors">Nishat Raihan, Mohammed Latif Siddiq, Joanna C. S. Santos, Marcos Zampieri</div>
-                <div class="pub-venue">Proceedings of the 56th ACM Technical Symposium on Computer Science Education V. 1 (SIGCSE-TS 2025)</div>
-                <div class="pub-description">
-                    A systematic literature review examining 125 papers on how LLMs are used and perceived in computer science education, identifying key trends, challenges, and opportunities.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://dl.acm.org/doi/abs/10.1145/3641554.3701863" class="btn btn-primary" target="_blank">Paper</a>
-                    <a href="https://dl.acm.org/doi/pdf/10.1145/3641554.3701863" class="btn btn-secondary" target="_blank">PDF</a>
-                    <a href="https://github.com/s2e-lab/llm-education-survey" class="btn btn-outline" target="_blank">Code</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Overview of BLP-2025 Task 2: Code Generation in Bangla</div>
-                <div class="pub-authors">Nishat Raihan, Mohammad Anas Jawad, Md Mezbaur Rahman, Noshin Ulfat, Pranav Gupta, Mehrab Mustafy Rahman, Shubhra Kanti Karmakar, Marcos Zampieri</div>
-                <div class="pub-venue">Proceedings of the Second Workshop on Bangla Language Processing (BLP-2025 @ IJCNLP-AACL 2025)</div>
-                <div class="pub-description">
-                    Overview paper for the BLP-2025 shared task on Bangla-to-Python code generation, providing benchmarks and evaluation of participating systems.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://aclanthology.org/2025.banglalp-1.31.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Multi-Sallm: A Multilingual Security Assessment of Generated Code</div>
-                <div class="pub-authors">Mohammed Latif Siddiq, Noshin Ulfat, Nishat Raihan, Joanna C. S. Santos, Marcos Zampieri</div>
-                <div class="pub-venue">Preprint (2025)</div>
-                <div class="pub-description">
-                    A benchmarking framework for evaluating LLMs' ability to generate secure code, featuring security-focused Python prompts translated into 23 natural languages, configurable assessment techniques, and new security-oriented metrics.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://www.researchsquare.com/article/rs-7745381/v1" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2024 Publications -->
-        <section>
-            <h2>2024</h2>
-
-            <div class="publication">
-                <div class="pub-title">Code LLMs: A Taxonomy-based Survey</div>
-                <div class="pub-authors">Nishat Raihan, Christian Newman, and Marcos Zampieri</div>
-                <div class="pub-venue">2024 IEEE International Conference on Big Data (IEEE Big Data 2024)</div>
-                <div class="pub-description">
-                    A comprehensive taxonomy-based survey on Code LLMs, covering evaluation benchmarks, corpora, limitations, and open problems in the domain.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://ieeexplore.ieee.org/abstract/document/10826108" class="btn btn-primary" target="_blank">Paper</a>
-                    <a href="https://arxiv.org/pdf/2412.08291" class="btn btn-secondary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">CSEPrompts: A Benchmark of Introductory Computer Science Prompts</div>
-                <div class="pub-authors">Nishat Raihan, Dhiman Goswami, Sadiya Sayara Chowdhury Puspo, Christian Newman, Tharindu Ranasinghe, Marcos Zampieri</div>
-                <div class="pub-venue">27th International Symposium on Methodologies for Intelligent Systems (ISMIS 2024)</div>
-                <div class="pub-description">
-                    A framework with hundreds of programming prompts and MCQs from introductory CS courses, evaluating LLM performance in Python code generation and CS fundamentals.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-62700-2_5" class="btn btn-primary" target="_blank">Paper</a>
-                    <a href="https://arxiv.org/pdf/2404.02540.pdf" class="btn btn-secondary" target="_blank">PDF</a>
-                    <a href="https://github.com/mraihan-gmu/CSEPrompts" class="btn btn-outline" target="_blank">Code</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MentalHelp: A Multi-Task Dataset for Mental Health in Social Media</div>
-                <div class="pub-authors">Md Nishat Raihan, Sadiya Sayara Chowdhury Puspo, Shafkat Farabi, Ana-Maria Bucur, Tharindu Ranasinghe, Marcos Zampieri</div>
-                <div class="pub-venue">The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)</div>
-                <div class="pub-description">
-                    A comprehensive 14 million instance semi-supervised dataset for mental health support research, containing diverse conversations for developing empathetic AI systems.
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://aclanthology.org/2024.lrec-main.977/" class="btn btn-primary" target="_blank">Paper</a>
-                    <a href="https://aclanthology.org/2024.lrec-main.977.pdf" class="btn btn-secondary" target="_blank">PDF</a>
-                    <a href="https://github.com/mraihan-gmu/MentalHelp" class="btn btn-outline" target="_blank">Dataset</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Py-holmes: Causal Testing for Deep Neural Networks in Python</div>
-                <div class="pub-authors">Wren McQueary, et al.</div>
-                <div class="pub-venue">Companion Proceedings of the 32nd ACM International Conference on the Foundations of Software Engineering (FSE 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://cs.gmu.edu/~johnsonb/docs/PyHolmes_FSE24demo.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">The BEA 2024 shared task on the multilingual lexical simplification pipeline</div>
-                <div class="pub-authors">Matthew Shardlow, et al.</div>
-                <div class="pub-venue">Proceedings of the 19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://aclanthology.org/2024.bea-1.51.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">An extensible massively multilingual lexical simplification pipeline dataset using the MultiLS framework</div>
-                <div class="pub-authors">Matthew Shardlow, et al.</div>
-                <div class="pub-venue">Proceedings of the 3rd Workshop on Tools and Resources for People with REAding DIfficulties (READI @ LREC-COLING 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://aclanthology.org/2024.readi-1.4.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">EmoMix-3L: A Code-Mixed Dataset in Bangla-English-Hindi for Emotion Detection</div>
-                <div class="pub-authors">Nishat Raihan, et al.</div>
-                <div class="pub-venue">LREC-COLING 2024</div>
-                <div class="pub-buttons">
-                    <a href="http://www.lrec-conf.org/proceedings/lrec-coling-2024/wildre/2024.wildre-1.0.pdf#page=18" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MasonTigers at SemEval-2024 Task 9: Solving Puzzles with an Ensemble of Chain-of-Thoughts</div>
-                <div class="pub-authors">Md Nishat Raihan, Dhiman Goswami, Al Nahian Bin Emran, Sadiya Sayara Chowdhury Puspo, Amrita Ganguly, Marcos Zampieri</div>
-                <div class="pub-venue">The 18th International Workshop on Semantic Evaluation (SemEval @ NAACL 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2403.14982.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MasonTigers at SemEval-2024 Task 1: An Ensemble Approach for Semantic Textual Relatedness</div>
-                <div class="pub-authors">D Goswami, SSC Puspo, MN Raihan, ANB Emran, A Ganguly, M Zampieri</div>
-                <div class="pub-venue">The 18th International Workshop on Semantic Evaluation (SemEval @ NAACL 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2403.14990.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MasonTigers at SemEval-2024 Task 8: Performance Analysis of Transformer-based Models on Machine-Generated Text Detection</div>
-                <div class="pub-authors">SSC Puspo, MN Raihan, D Goswami, ANB Emran, A Ganguly, O Uzuner</div>
-                <div class="pub-venue">The 18th International Workshop on Semantic Evaluation (SemEval @ NAACL 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2403.14989.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MasonPerplexity at ClimateActivism 2024: Integrating Advanced Ensemble Techniques and Data Augmentation for Climate Activism Stance and Hate Event Identification</div>
-                <div class="pub-authors">A Ganguly, SSC Puspo, D Goswami, MN Raihan</div>
-                <div class="pub-venue">Fourth Workshop on Language Technology for Equality, Diversity, Inclusion (LTEDI @ EACL 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://aclanthology.org/2024.case-1.18.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MasonPerplexity at Multimodal Hate Speech Event Detection 2024: Hate Speech and Target Detection Using Transformer Ensembles</div>
-                <div class="pub-authors">A Ganguly, ANB Emran, SSC Puspo, MN Raihan, D Goswami, M Zampieri</div>
-                <div class="pub-venue">7th Workshop on Challenges and Applications of Automated Extraction of Socio-political Events from Text (CASE @ EACL 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2402.01967.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MasonTigers @ LT-EDI-2024: An Ensemble Approach towards Detecting Homophobia and Transphobia in Social Media Comments</div>
-                <div class="pub-authors">D Goswami, SSC Puspo, MN Raihan, ANB Emran</div>
-                <div class="pub-venue">Fourth Workshop on Language Technology for Equality, Diversity, Inclusion (LTEDI @ EACL 2024)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2401.14681.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2023 Publications -->
-        <section>
-            <h2>2023</h2>
-
-            <div class="publication">
-                <div class="pub-title">Offensive Language Identification in Transliterated and Code-Mixed Bangla</div>
-                <div class="pub-authors">Md Nishat Raihan, Umma Hani Tanmoy, Anika Binte Islam, Kai North, Tharindu Ranasinghe, Antonios Anastasopoulos, Marcos Zampieri</div>
-                <div class="pub-venue">
-                    Proceedings of the 1st International Workshop on Bangla Language Processing (BLP-2023 @ EMNLP)
-                    <span class="badge">BEST PAPER AWARD</span>
-                </div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2311.15023.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                    <a href="https://github.com/mraihan-gmu/TB-OLID" class="btn btn-outline" target="_blank">Dataset</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">nlpBDpatriots at BLP-2023 Task 1: A Two-Step Classification for Violence Inciting Text Detection in Bangla</div>
-                <div class="pub-authors">Md Nishat Raihan, Dhiman Goswami, Sadiya Sayara Chowdhury Puspo, Marcos Zampieri</div>
-                <div class="pub-venue">Proceedings of the 1st International Workshop on Bangla Language Processing (BLP-2023 @ EMNLP)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2311.15029.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">nlpBDpatriots at BLP-2023 Task 2: A Transfer Learning Approach to Bangla Sentiment Analysis</div>
-                <div class="pub-authors">Dhiman Goswami, Md Nishat Raihan, Sadiya Sayara Chowdhury Puspo, Marcos Zampieri</div>
-                <div class="pub-venue">Proceedings of the 1st International Workshop on Bangla Language Processing (BLP-2023 @ EMNLP)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2311.15032.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">OffMix-3L: A Novel Code-Mixed Dataset in Bangla-English-Hindi for Offensive Language Identification</div>
-                <div class="pub-authors">Dhiman Goswami, Md Nishat Raihan, Antara Mahmud, Antonios Anastasopoulos, Marcos Zampieri</div>
-                <div class="pub-venue">The First Workshop in South East Asian Language Processing (AACL 2023)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2310.18387.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                    <a href="https://github.com/mraihan-gmu/OffMix-3L" class="btn btn-outline" target="_blank">Dataset</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">SentMix-3L: A Bangla-English-Hindi Code-Mixed Dataset for Sentiment Analysis</div>
-                <div class="pub-authors">Md Nishat Raihan, Dhiman Goswami, Antara Mahmud, Antonios Anastasopoulos, Marcos Zampieri</div>
-                <div class="pub-venue">The 11th International Workshop on Natural Language Processing for Social Media (AACL 2023)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2310.18023.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                    <a href="https://github.com/mraihan-gmu/SentMix-3L" class="btn btn-outline" target="_blank">Dataset</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Mixed-Distil-BERT: Code-mixed Language Modeling for Bangla, English, and Hindi</div>
-                <div class="pub-authors">Raihan, Md Nishat, Dhiman Goswami, and Antara Mahmud</div>
-                <div class="pub-venue">arXiv preprint arXiv:2309.10272 (2023)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2309.10272.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                    <a href="https://huggingface.co/md-nishat-008/Mixed-Distil-BERT" class="btn btn-outline" target="_blank">Model</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Determining the Optimal Number of Clusters for Time Series Datasets with Symbolic Pattern Forest</div>
-                <div class="pub-authors">Raihan, Md Nishat</div>
-                <div class="pub-venue">arXiv preprint arXiv:2310.00820 (2023)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/2310.00820.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2022 Publications -->
-        <section>
-            <h2>2022</h2>
-
-            <div class="publication">
-                <div class="pub-title">An Experimental Analysis on the Sensitivity of the Most Widely Used Edge Detection Methods to Different Noise Types</div>
-                <div class="pub-authors">Raihan, M., Ulfat, N, and Saqib, Nazmus</div>
-                <div class="pub-venue">International Conference on Computing Advancements (ICCA 2022)</div>
-                <div class="pub-buttons">
-                    <a href="https://dl.acm.org/doi/pdf/10.1145/3542954.3543008" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2020 Publications -->
-        <section>
-            <h2>2020</h2>
-
-            <div class="publication">
-                <div class="pub-title">A Novel Approach to Classify Electrocardiogram Signals Using Deep Neural Networks</div>
-                <div class="pub-authors">Ahmed, T., Rahman, A., Chowdhury, T.M., Kushol, R. and Raihan, M.N.</div>
-                <div class="pub-venue">2020 2nd International Conference on Computer and Information Sciences (ICCIS), IEEE</div>
-                <div class="pub-buttons">
-                    <a href="http://103.82.172.44:8080/xmlui/bitstream/handle/123456789/614/Thesis%20Book%20154404_154407.pdf?sequence=1&isAllowed=y" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2019 Publications -->
-        <section>
-            <h2>2019</h2>
-
-            <div class="publication">
-                <div class="pub-title">Contrast Enhancement of Medical X-Ray Image Using Morphological Operators with Optimal Structuring Element</div>
-                <div class="pub-authors">Kushol, R., Raihan, M., Salekin, M.S. and Rahman, A.B.M.</div>
-                <div class="pub-venue">arXiv preprint arXiv:1905.08545 (2019)</div>
-                <div class="pub-buttons">
-                    <a href="https://arxiv.org/pdf/1905.08545.pdf" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">A Complete Bangla Optical Character Recognition System: An Effective Approach</div>
-                <div class="pub-authors">T. Ahmed, M. N. Raihan, R. Kushol and M. S. Salekin</div>
-                <div class="pub-venue">2019 22nd International Conference on Computer and Information Technology (ICCIT)</div>
-                <div class="pub-buttons">
-                    <a href="https://ieeexplore.ieee.org/abstract/document/9038551" class="btn btn-primary" target="_blank">Paper</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2018 Publications -->
-        <section>
-            <h2>2018</h2>
-
-            <div class="publication">
-                <div class="pub-title">An Effective Navigation System Combining both Object Detection and Obstacle Detection Based on Depth Information for the Visually Impaired</div>
-                <div class="pub-authors">Raihan, Md, and Hossain Mohammad Seym</div>
-                <div class="pub-venue">Department of Computer Science and Engineering (2018)</div>
-                <div class="pub-buttons">
-                    <a href="http://103.82.172.44:8080/xmlui/handle/123456789/547" class="btn btn-primary" target="_blank">PDF</a>
-                </div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">An Android-Based Useful Text Extraction Framework Using Image and Natural Language Processing</div>
-                <div class="pub-authors">Rafsanjany Kushol, Imamul Ahsan, and Md. Nishat Raihan</div>
-                <div class="pub-venue">International Journal of Computer Theory and Engineering (IJCTE), vol. 10, no. 3, pp. 77-83, 2018</div>
-                <div class="pub-buttons">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pufsZewAAAAJ&citation_for_view=pufsZewAAAAJ:9yKSN-GCB0IC" class="btn btn-primary" target="_blank">Paper</a>
-                </div>
-            </div>
-        </section>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="mono-mark">ND</span> Nishat Raihan</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="honors-awards.html">Honors &amp; Awards</a></li>
+      <li><a href="media/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+      <li><a href="talks.html">Talks</a></li>
+      <li><a href="personal.html">Personal</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;">
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
+  </div>
+</nav>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Nishat Raihan | George Mason University</p>
-    </footer>
+<div class="wrap">
+  <header class="page-head reveal">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M8.5 13h7M8.5 17h7"/></svg>Research output</div>
+    <h1>Publications</h1>
+    <p>Author name in <strong>bold</strong>. A superscript <sup>m</sup> marks graduate-student mentees I co-authored with.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">40+</div><div class="lab">Publications</div></div>
+      <div class="stat"><div class="num">561+</div><div class="lab">Citations</div></div>
+      <div class="stat"><div class="num">13</div><div class="lab">h-index</div></div>
+      <div class="stat"><div class="num">18</div><div class="lab">i10-index</div></div>
+    </div>
+    <div class="btn-row">
+      <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en" target="_blank" rel="noopener" class="btn">Google Scholar</a>
+      <a href="media/cv.pdf" target="_blank" rel="noopener" class="btn ghost">Full CV (PDF)</a>
+    </div>
+  </header>
+</div>
+
+<div class="wrap">
+<div class="page-body">
+
+  <section class="section reveal d1">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M19 19v2H6a2 2 0 0 1-2-2"/><path d="M8 7h7M8 11h7"/></svg>Journal articles</div>
+
+    <div class="pub">
+      <div class="vkey">J2</div>
+      <div>
+        <div class="ptitle">On the Performance of Large Language Models on Introductory Programming Assignments</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Dhiman Goswami, Sadiya Sayara Chowdhury Puspo, Mohammed Latif Siddiq, Christian Newman, Tharindu Ranasinghe, Joanna C. S. Santos, Marcos Zampieri</div>
+        <div class="pvenue">Journal of Intelligent Information Systems, Springer (2025)</div>
+        <div class="plinks"><a href="https://link.springer.com/article/10.1007/s10844-025-00968-y" target="_blank" rel="noopener">Paper</a><a href="https://github.com/mraihan-gmu/CSEPrompts" target="_blank" rel="noopener">Code</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">J1</div>
+      <div>
+        <div class="ptitle">An Android-Based Useful Text Extraction Framework Using Image and Natural Language Processing</div>
+        <div class="pauthors">Rafsanjany Kushol, Imamul Ahsan, <span class="me">Md. Nishat Raihan</span></div>
+        <div class="pvenue">International Journal of Computer Theory and Engineering (IJCTE), vol. 10, no. 3, pp. 77–83 (2018)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal d2">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8.5 20h7M8.5 9.5l2.5 2.5 4.5-4.5"/></svg>Conference papers</div>
+
+    <div class="pub">
+      <div class="vkey">C12</div>
+      <div>
+        <div class="ptitle">TigerCoder: A Novel Suite of LLMs for Code Generation in Bangla</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Antonios Anastasopoulos, Marcos Zampieri</div>
+        <div class="pvenue">Language Resources and Evaluation Conference (LREC 2026)</div>
+        <div class="plinks"><a href="https://github.com/mraihan-gmu" target="_blank" rel="noopener">Code</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C11</div>
+      <div>
+        <div class="ptitle">CodeGuard: Improving LLM Guardrails in CS Education<span class="badge">Accepted</span></div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Noah Erdachew, Jayoti Devi<sup>m</sup>, Joanna C. S. Santos, Marcos Zampieri</div>
+        <div class="pvenue">Findings of the 19th Conference of the European Chapter of the ACL (EACL 2026)</div>
+        <div class="pdesc">A taxonomy, an 8K-prompt dataset, and PromptShield (fine-tuned RoBERTa, 0.93 F1) that cuts harmful code completions by 30–65% while preserving legitimate coding assistance.</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2602.02440" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C10</div>
+      <div>
+        <div class="ptitle">TigerLLM: A Family of Bangla Large Language Models</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Marcos Zampieri</div>
+        <div class="pvenue">63rd Annual Meeting of the ACL (ACL 2025), Short Papers</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.acl-short.69.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/TigerLLM" target="_blank" rel="noopener">Code</a><a href="https://huggingface.co/md-nishat-008/TigerLLM-1B-it" target="_blank" rel="noopener">Model</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C9</div>
+      <div>
+        <div class="ptitle">mHumanEval: A Multilingual Benchmark to Evaluate Large Language Models for Code Generation</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Antonios Anastasopoulos, Marcos Zampieri</div>
+        <div class="pvenue">NAACL 2025, Main, Long Papers</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.naacl-long.570.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/mHumanEval-Benchmark" target="_blank" rel="noopener">Code</a><a href="https://huggingface.co/datasets/md-nishat-008/mHumanEval-Benchmark" target="_blank" rel="noopener">Dataset</a><a href="blog-post-mhumaneval.html">Blog</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C8</div>
+      <div>
+        <div class="ptitle">MojoBench: Language Modeling and Benchmarks for Mojo</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Joanna C. S. Santos, Marcos Zampieri</div>
+        <div class="pvenue">Findings of NAACL 2025</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.findings-naacl.230.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/MojoBench" target="_blank" rel="noopener">Code</a><a href="https://huggingface.co/md-nishat-008/Mojo-Coder-it" target="_blank" rel="noopener">Model</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C7</div>
+      <div>
+        <div class="ptitle">Large Language Models in Computer Science Education: A Systematic Literature Review</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Mohammed Latif Siddiq, Joanna C. S. Santos, Marcos Zampieri</div>
+        <div class="pvenue">56th ACM Technical Symposium on Computer Science Education (SIGCSE-TS 2025)</div>
+        <div class="plinks"><a href="https://dl.acm.org/doi/abs/10.1145/3641554.3701863" target="_blank" rel="noopener">Paper</a><a href="https://dl.acm.org/doi/pdf/10.1145/3641554.3701863" target="_blank" rel="noopener">PDF</a><a href="https://github.com/s2e-lab/llm-education-survey" target="_blank" rel="noopener">Code</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C6</div>
+      <div>
+        <div class="ptitle">Code LLMs: A Taxonomy-based Survey</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Christian Newman, Marcos Zampieri</div>
+        <div class="pvenue">2024 IEEE International Conference on Big Data (IEEE BigData 2024)</div>
+        <div class="plinks"><a href="https://ieeexplore.ieee.org/abstract/document/10826108" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/pdf/2412.08291" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C5</div>
+      <div>
+        <div class="ptitle">CSEPrompts: A Benchmark of Introductory Computer Science Prompts</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Dhiman Goswami, Sadiya Sayara Chowdhury Puspo, Christian Newman, Tharindu Ranasinghe, Marcos Zampieri</div>
+        <div class="pvenue">27th International Symposium on Methodologies for Intelligent Systems (ISMIS 2024)</div>
+        <div class="plinks"><a href="https://link.springer.com/chapter/10.1007/978-3-031-62700-2_5" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/pdf/2404.02540.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/CSEPrompts" target="_blank" rel="noopener">Code</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C4</div>
+      <div>
+        <div class="ptitle">MentalHelp: A Multi-Task Dataset for Mental Health in Social Media</div>
+        <div class="pauthors">Md Nishat Raihan, Sadiya Sayara Chowdhury Puspo<sup>m</sup>, Shafkat Farabi, Ana-Maria Bucur, Tharindu Ranasinghe, Marcos Zampieri</div>
+        <div class="pvenue">LREC-COLING 2024</div>
+        <div class="plinks"><a href="https://aclanthology.org/2024.lrec-main.977/" target="_blank" rel="noopener">Paper</a><a href="https://aclanthology.org/2024.lrec-main.977.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/MentalHelp" target="_blank" rel="noopener">Dataset</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C3</div>
+      <div>
+        <div class="ptitle">An Experimental Analysis on the Sensitivity of the Most Widely Used Edge Detection Methods to Different Noise Types</div>
+        <div class="pauthors">M. Raihan, N. Ulfat, N. Saqib</div>
+        <div class="pvenue">International Conference on Computing Advancements (ICCA 2022)</div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C2</div>
+      <div>
+        <div class="ptitle">A Novel Approach to Classify Electrocardiogram Signals Using Deep Neural Networks</div>
+        <div class="pauthors">T. Ahmed, A. Rahman, T. M. Chowdhury, R. Kushol, M. N. Raihan</div>
+        <div class="pvenue">2nd International Conference on Computer and Information Sciences (ICCIS 2020), IEEE</div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">C1</div>
+      <div>
+        <div class="ptitle">A Complete Bangla Optical Character Recognition System: An Effective Approach</div>
+        <div class="pauthors">T. Ahmed, M. N. Raihan, R. Kushol, M. S. Salekin</div>
+        <div class="pvenue">22nd International Conference on Computer and Information Technology (ICCIT 2019), IEEE</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal d3">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 18 9 9.5 17.5 6 18l.5-3.5Z"/><path d="M13 7 17 11"/><path d="M4 21h16"/></svg>Workshop &amp; shared-task papers</div>
+
+    <div class="pub">
+      <div class="vkey">W18</div>
+      <div>
+        <div class="ptitle">Temporal Text Classification with Large Language Models</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Marcos Zampieri</div>
+        <div class="pvenue">Workshop on NLP for Digital Humanities (NLP4DH @ ACL 2026)</div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W17</div>
+      <div>
+        <div class="ptitle">Large Language Models for Mental Health: A Multilingual Evaluation</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Sadiya Sayara Chowdhury Puspo, Ana-Maria Bucur, Stevie Chancellor, Marcos Zampieri</div>
+        <div class="pvenue">2nd Workshop on Language Models for Low-Resource Languages (LoResLM @ EACL 2026)</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2602.02440" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W16</div>
+      <div>
+        <div class="ptitle">Overview of BLP-2025 Task 2: Code Generation in Bangla</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Mohammad Anas Jawad, Md Mezbaur Rahman, Noshin Ulfat, Pranav Gupta, Mehrab Mustafy Rahman, Shubhra Kanti Karmakar, Marcos Zampieri</div>
+        <div class="pvenue">2nd Workshop on Bangla Language Processing (BLP @ IJCNLP-AACL 2025)</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.banglalp-1.31.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W15</div>
+      <div>
+        <div class="ptitle">Py-holmes: Causal Testing for Deep Neural Networks in Python</div>
+        <div class="pauthors">Wren McQueary, Sadia Afrin Mim, Md. Nishat Raihan, Justin Smith, Brittany Johnson</div>
+        <div class="pvenue">Companion Proceedings of FSE 2024</div>
+        <div class="plinks"><a href="https://cs.gmu.edu/~johnsonb/docs/PyHolmes_FSE24demo.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W14</div>
+      <div>
+        <div class="ptitle">The BEA 2024 Shared Task on the Multilingual Lexical Simplification Pipeline</div>
+        <div class="pauthors">Matthew Shardlow et al. (incl. M. N. Raihan)</div>
+        <div class="pvenue">19th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2024)</div>
+        <div class="plinks"><a href="https://aclanthology.org/2024.bea-1.51.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W13</div>
+      <div>
+        <div class="ptitle">An Extensible Massively Multilingual Lexical Simplification Pipeline Dataset Using the MultiLS Framework</div>
+        <div class="pauthors">Matthew Shardlow et al. (incl. M. N. Raihan)</div>
+        <div class="pvenue">3rd Workshop on Tools and Resources for People with Reading Difficulties (READI @ LREC-COLING 2024)</div>
+        <div class="plinks"><a href="https://aclanthology.org/2024.readi-1.4.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W12</div>
+      <div>
+        <div class="ptitle">EmoMix-3L: A Code-Mixed Dataset for Bangla-English-Hindi Emotion Detection</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span> et al.</div>
+        <div class="pvenue">WILDRE Workshop, LREC-COLING 2024</div>
+        <div class="plinks"><a href="http://www.lrec-conf.org/proceedings/lrec-coling-2024/wildre/2024.wildre-1.0.pdf#page=18" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W11</div>
+      <div>
+        <div class="ptitle">MasonTigers at SemEval-2024 Task 9: Solving Puzzles with an Ensemble of Chain-of-Thoughts</div>
+        <div class="pauthors">Md Nishat Raihan, Dhiman Goswami, Al Nahian Bin Emran, Sadiya Sayara Chowdhury Puspo, Amrita Ganguly, Marcos Zampieri</div>
+        <div class="pvenue">18th International Workshop on Semantic Evaluation (SemEval @ NAACL 2024)</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2403.14982.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W10</div>
+      <div>
+        <div class="ptitle">MasonTigers at SemEval-2024 Task 1: An Ensemble Approach for Semantic Textual Relatedness</div>
+        <div class="pauthors">D. Goswami, S. S. C. Puspo, M. N. Raihan, A. N. B. Emran, A. Ganguly, M. Zampieri</div>
+        <div class="pvenue">18th International Workshop on Semantic Evaluation (SemEval @ NAACL 2024)</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2403.14990.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W9</div>
+      <div>
+        <div class="ptitle">MasonTigers at SemEval-2024 Task 8: Performance Analysis of Transformer-based Models on Machine-Generated Text Detection</div>
+        <div class="pauthors">S. S. C. Puspo, M. N. Raihan, D. Goswami, A. N. B. Emran, A. Ganguly, O. Uzuner</div>
+        <div class="pvenue">18th International Workshop on Semantic Evaluation (SemEval @ NAACL 2024)</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2403.14989.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W8</div>
+      <div>
+        <div class="ptitle">MasonPerplexity at ClimateActivism 2024: Advanced Ensemble Techniques and Data Augmentation for Stance and Hate Event Identification</div>
+        <div class="pauthors">A. Ganguly, S. S. C. Puspo, D. Goswami, M. N. Raihan</div>
+        <div class="pvenue">LT-EDI Workshop, EACL 2024</div>
+        <div class="plinks"><a href="https://aclanthology.org/2024.case-1.18.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W7</div>
+      <div>
+        <div class="ptitle">MasonPerplexity at Multimodal Hate Speech Event Detection 2024: Hate Speech and Target Detection Using Transformer Ensembles</div>
+        <div class="pauthors">A. Ganguly, A. N. B. Emran, S. S. C. Puspo, M. N. Raihan, D. Goswami, M. Zampieri</div>
+        <div class="pvenue">7th CASE Workshop (CASE @ EACL 2024)</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2402.01967.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W6</div>
+      <div>
+        <div class="ptitle">MasonTigers at LT-EDI-2024: An Ensemble Approach towards Detecting Homophobia and Transphobia in Social Media Comments</div>
+        <div class="pauthors">D. Goswami, S. S. C. Puspo, M. N. Raihan, A. N. B. Emran</div>
+        <div class="pvenue">4th LT-EDI Workshop (LT-EDI @ EACL 2024)</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2401.14681.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W5</div>
+      <div>
+        <div class="ptitle">Offensive Language Identification in Transliterated and Code-Mixed Bangla<span class="badge">Best Paper</span></div>
+        <div class="pauthors">Md Nishat Raihan, Umma Hani Tanmoy, Anika Binte Islam, Kai North, Tharindu Ranasinghe, Antonios Anastasopoulos, Marcos Zampieri</div>
+        <div class="pvenue">1st Workshop on Bangla Language Processing (BLP @ EMNLP 2023), Singapore</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2311.15023.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/TB-OLID" target="_blank" rel="noopener">Dataset</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W4</div>
+      <div>
+        <div class="ptitle">nlpBDpatriots at BLP-2023 Task 1: A Two-Step Classification for Violence Inciting Text Detection in Bangla</div>
+        <div class="pauthors">Md Nishat Raihan, Dhiman Goswami, Sadiya Sayara Chowdhury Puspo, Marcos Zampieri</div>
+        <div class="pvenue">1st Workshop on Bangla Language Processing (BLP @ EMNLP 2023), Singapore</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2311.15029.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W3</div>
+      <div>
+        <div class="ptitle">nlpBDpatriots at BLP-2023 Task 2: A Transfer Learning Approach to Bangla Sentiment Analysis</div>
+        <div class="pauthors">Dhiman Goswami, Md Nishat Raihan, Sadiya Sayara Chowdhury Puspo, Marcos Zampieri</div>
+        <div class="pvenue">1st Workshop on Bangla Language Processing (BLP @ EMNLP 2023), Singapore</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2311.15032.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W2</div>
+      <div>
+        <div class="ptitle">OffMix-3L: A Novel Code-Mixed Dataset in Bangla-English-Hindi for Offensive Language Identification</div>
+        <div class="pauthors">Dhiman Goswami, Md Nishat Raihan, Antara Mahmud, Antonios Anastasopoulos, Marcos Zampieri</div>
+        <div class="pvenue">1st Workshop in South East Asian Language Processing (SEALP @ AACL 2023), Bali</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2310.18387.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/OffMix-3L" target="_blank" rel="noopener">Dataset</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">W1</div>
+      <div>
+        <div class="ptitle">SentMix-3L: A Bangla-English-Hindi Code-Mixed Dataset for Sentiment Analysis</div>
+        <div class="pauthors">Md Nishat Raihan, Dhiman Goswami, Antara Mahmud, Antonios Anastasopoulos, Marcos Zampieri</div>
+        <div class="pvenue">11th International Workshop on NLP for Social Media (AACL 2023), Bali</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2310.18023.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/SentMix-3L" target="_blank" rel="noopener">Dataset</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal d4">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7Z"/><path d="M14 3v5h5"/><path d="M9.5 13.5h5M9.5 17h5"/><path d="M3 7v13a1 1 0 0 0 1 1h11" stroke-dasharray="2 2"/></svg>Preprints &amp; technical reports</div>
+
+    <div class="pub">
+      <div class="vkey">P6</div>
+      <div>
+        <div class="ptitle">A Taxonomy of Programming Languages for Code Generation</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span>, Christian Newman, Marcos Zampieri</div>
+        <div class="pvenue">arXiv:2604.00239 (2026)</div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">P5</div>
+      <div>
+        <div class="ptitle">Multi-SaLLM: A Multilingual Security Assessment of Generated Code</div>
+        <div class="pauthors">Mohammed Latif Siddiq, Noshin Ulfat, <span class="me">Nishat Raihan</span>, Joanna C. S. Santos, Marcos Zampieri</div>
+        <div class="pvenue">Preprint (2025)</div>
+        <div class="plinks"><a href="https://www.researchsquare.com/article/rs-7745381/v1" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">P4</div>
+      <div>
+        <div class="ptitle">Mixed-Distil-BERT: Code-mixed Language Modeling for Bangla, English, and Hindi</div>
+        <div class="pauthors">Md Nishat Raihan, Dhiman Goswami, Antara Mahmud</div>
+        <div class="pvenue">arXiv:2309.10272 (2023)</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2309.10272.pdf" target="_blank" rel="noopener">PDF</a><a href="https://huggingface.co/md-nishat-008/Mixed-Distil-BERT" target="_blank" rel="noopener">Model</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">P3</div>
+      <div>
+        <div class="ptitle">Determining the Optimal Number of Clusters for Time Series Datasets with Symbolic Pattern Forest</div>
+        <div class="pauthors"><span class="me">Md Nishat Raihan</span></div>
+        <div class="pvenue">arXiv:2310.00820 (2023)</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2310.00820" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">P2</div>
+      <div>
+        <div class="ptitle">Contrast Enhancement of Medical X-Ray Image Using Morphological Operators with Optimal Structuring Element</div>
+        <div class="pauthors">R. Kushol, M. Raihan, M. S. Salekin, A. B. M. Rahman</div>
+        <div class="pvenue">arXiv:1905.08545 (2019)</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/1905.08545" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">P1</div>
+      <div>
+        <div class="ptitle">An Effective Navigation System Combining Object Detection and Obstacle Detection Based on Depth Information for the Visually Impaired</div>
+        <div class="pauthors">Md Raihan, Hossain Mohammad Seym</div>
+        <div class="pvenue">B.Sc. Thesis, Dept. of Computer Science and Engineering (2018)</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 Nishat Raihan · <a href="https://md-nishat.com">md-nishat.com</a></div>
+    <div class="fnav">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="education.html">Education</a>
+      <a href="service.html">Service</a>
+      <a href="experience.html">Experience</a>
+      <a href="honors-awards.html">Honors &amp; Awards</a>
+      <a href="media/cv.pdf" target="_blank" rel="noopener">CV</a>
+      <a href="talks.html">Talks</a>
+      <a href="personal.html">Personal</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
