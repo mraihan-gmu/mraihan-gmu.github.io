@@ -87,14 +87,6 @@ strong, b { font-weight: 600; color: var(--ink); }
   flex: none; white-space: nowrap;
 }
 .brand:hover { text-decoration: none; }
-.brand .mono-mark {
-  width: 30px; height: 30px; flex: none;
-  border: 1.5px solid var(--gold);
-  border-radius: 50%;
-  display: grid; place-items: center;
-  font-family: var(--serif); font-size: 0.82rem; font-weight: 700;
-  color: var(--gold);
-}
 .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; flex: none; }
 .nav-links a {
   color: var(--ink-soft); font-size: 0.9rem; font-weight: 400;
@@ -146,7 +138,7 @@ strong, b { font-weight: 600; color: var(--ink); }
 .profile .role .incoming {
   display: inline-block; font-size: 0.7rem; font-weight: 600;
   letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--gold); border: 1px solid var(--gold);
+  color: var(--accent); border: 1px solid var(--gold);
   padding: 1px 7px; border-radius: 999px; margin-bottom: 7px;
 }
 .profile .affil {
@@ -190,7 +182,7 @@ strong, b { font-weight: 600; color: var(--ink); }
   font-family: var(--sans);
   font-size: 0.72rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 14px;
+  color: var(--accent); margin-bottom: 14px;
   display: flex; align-items: center; gap: 10px;
 }
 .eyebrow svg {
@@ -232,7 +224,7 @@ strong, b { font-weight: 600; color: var(--ink); }
 .news-item .n-when {
   display: block; font-family: var(--mono); font-size: 0.72rem;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--nd-gold-warm); margin-bottom: 2px;
+  color: var(--accent); margin-bottom: 2px;
 }
 .news-item b { color: var(--ink); }
 .news-item a { border-bottom: 1px solid rgba(28, 79, 143, 0.3); }
@@ -292,7 +284,7 @@ a.interest:hover .go { gap: 9px; }
 .modal .m-eyebrow {
   font-family: var(--mono); font-size: 0.68rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 10px;
+  color: var(--accent); margin-bottom: 10px;
 }
 .modal h3 { font-size: 1.25rem; margin-bottom: 10px; }
 .modal p { font-size: 0.94rem; color: var(--ink-soft); }
@@ -322,7 +314,7 @@ a.interest:hover .go { gap: 9px; }
 .pub:first-of-type { border-top: none; }
 .pub .vkey {
   font-family: var(--mono); font-size: 0.72rem;
-  color: var(--gold); font-weight: 600; padding-top: 4px;
+  color: var(--accent); font-weight: 600; padding-top: 4px;
   letter-spacing: 0.04em;
 }
 .pub .ptitle {
@@ -365,7 +357,7 @@ a.interest:hover .go { gap: 9px; }
 .cat-code   { color: #0c2340; background: rgba(12, 35, 64, 0.07); }
 .cat-nlp    { color: #1c4f8f; background: rgba(28, 79, 143, 0.08); }
 .cat-safety { color: #9a1b2f; background: rgba(154, 27, 47, 0.07); }
-.cat-edu    { color: #8a6800; background: rgba(201, 151, 0, 0.1); }
+.cat-edu    { color: #0e6b5c; background: rgba(14, 107, 92, 0.08); }
 .cat-vision { color: #2f7d4f; background: rgba(47, 125, 79, 0.08); }
 .cat-time   { color: #6b4fa0; background: rgba(107, 79, 160, 0.08); }
 .cat-mltest { color: #b05f16; background: rgba(176, 95, 22, 0.08); }
@@ -452,7 +444,7 @@ a.interest:hover .go { gap: 9px; }
 
 .cv-list { columns: 2; column-gap: 40px; font-size: 0.94rem; color: var(--ink-soft); }
 .cv-list li { margin-bottom: 7px; break-inside: avoid; list-style: none; padding-left: 16px; position: relative; }
-.cv-list li::before { content: "\25B9"; position: absolute; left: 0; color: var(--gold); }
+.cv-list li::before { content: "\25B9"; position: absolute; left: 0; color: var(--accent); }
 
 /* personal page: left sub-nav + panels */
 .personal-wrap {
@@ -497,14 +489,14 @@ a.interest:hover .go { gap: 9px; }
 .pgroup:last-child { margin-bottom: 0; }
 .pgroup h3 {
   font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 16px; font-family: var(--sans); font-weight: 600;
+  color: var(--accent); margin-bottom: 16px; font-family: var(--sans); font-weight: 600;
 }
 .plist { list-style: none; display: grid; gap: 10px; }
 .plist li {
   font-size: 0.96rem; color: var(--ink-soft);
   padding-left: 20px; position: relative; line-height: 1.55;
 }
-.plist li::before { content: "\25B9"; position: absolute; left: 0; color: var(--gold); }
+.plist li::before { content: "\25B9"; position: absolute; left: 0; color: var(--accent); }
 .plist li b { color: var(--ink); }
 .pnote {
   font-size: 0.88rem; color: var(--ink-faint); font-style: italic;
@@ -514,7 +506,7 @@ a.interest:hover .go { gap: 9px; }
 /* books with covers */
 .bookgrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 20px 18px;
 }
 .book { margin: 0; }
@@ -540,16 +532,16 @@ a.interest:hover .go { gap: 9px; }
 }
 .book .bcov.placeholder .ph-title {
   font-family: var(--serif); font-size: 0.9rem; font-weight: 560;
-  color: #f4eddc; line-height: 1.3;
+  color: #f2f5fa; line-height: 1.3;
 }
 .book .bcov.placeholder .ph-author {
   font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--nd-gold-bright); margin-top: 9px;
+  text-transform: uppercase; color: #b9c7db; margin-top: 9px;
 }
 .book figcaption { padding-top: 9px; }
 .book .brank {
   display: inline-block; font-family: var(--mono); font-size: 0.64rem;
-  font-weight: 600; letter-spacing: 0.1em; color: var(--gold);
+  font-weight: 600; letter-spacing: 0.1em; color: var(--accent);
 }
 .book .btitle {
   display: block; font-family: var(--serif); font-size: 0.92rem;
@@ -576,7 +568,7 @@ a.interest:hover .go { gap: 9px; }
 .ranklist li:last-child { border-bottom: none; }
 .ranklist .rk {
   font-family: var(--mono); font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.06em; color: var(--gold);
+  letter-spacing: 0.06em; color: var(--accent);
 }
 .ranklist .rtitle { color: var(--ink); font-weight: 500; }
 .ranklist .rnote { font-size: 0.78rem; color: var(--ink-faint); font-style: italic; }
@@ -771,4 +763,20 @@ a.interest:hover .go { gap: 9px; }
 @media (max-width: 460px) {
   .writing-wrap { grid-template-columns: 1fr; }
   .writing-cover { max-width: 210px; }
+}
+
+/* CV page: larger section titles, quieter logos */
+.cv-page .eyebrow {
+  font-size: 1.04rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.cv-page .eyebrow svg { width: 19px; height: 19px; }
+.cv-page .crest { width: 30px; height: 30px; border-radius: 7px; }
+.cv-page .crest.sm { width: 26px; height: 26px; border-radius: 6px; }
+
+/* writing tab: novella title */
+.writing-text .w-title {
+  font-family: var(--serif); font-size: 1.28rem; font-weight: 560;
+  color: var(--accent); margin-bottom: 0.45em;
 }

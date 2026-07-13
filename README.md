@@ -22,7 +22,7 @@ education.html, experience.html, service.html,
 honors-awards.html, talks.html              Redirect stubs into cv.html sections
 assets/style.css      Shared design system
 assets/main.js        Mobile menu, personal sub-tabs, dissertation modal, cover fallback
-media/                cv.pdf, profile.jpg, mybook.png, logo.png
+media/                cv.pdf, profile.png, mybook.png, logo.png
 media/logos/          Institution and team logo tiles (PNG)
 media/covers/         Optional local book covers (see the README inside)
 CNAME                 Custom domain (md-nishat.com)
@@ -64,24 +64,27 @@ be deleted.
 Add a `<div class="news-item">` at the top; newest first.
 
 **Book covers.** Covers on the Personal page try `media/covers/<name>.jpg`
-first, then Open Library, then a styled navy placeholder with the title and
+first, then a hosted image (Open Library or Project Gutenberg, set in the
+`data-alt` attribute), then a styled navy placeholder with the title and
 author. To pin any cover, drop a JPG into `media/covers/` with the filename
 listed in `media/covers/README.txt`. No HTML changes needed.
 
-**Team logos.** `media/logos/warriors.png` and `media/logos/manutd.png` are
-clean placeholder badges. Replace each file with the official logo PNG under
-the same filename (square, about 256x256); the Sports tab picks it up
-automatically. The institution tiles (`nd.png`, `gmu.png`, `iut.png`,
+**Team logos.** The Sports tab loads the official Warriors and Manchester
+United crests from Wikipedia. If either link ever breaks, the page falls
+back to the local placeholder badges `media/logos/warriors.png` and
+`media/logos/manutd.png`; overwrite those files (square PNG, about 256x256)
+to change the fallback, or edit the `src` in `personal.html` to serve a
+local file directly. The institution tiles (`nd.png`, `gmu.png`, `iut.png`,
 `samsung.png`, `uttara.png`, `duke.png`, `fresno.png`, `pvamu.png`,
-`award.png`) work the same way.
+`award.png`) are placeholder monograms; replace each under the same
+filename.
 
-**Novella cover.** Overwrite `media/mybook.png` with the real cover
-(portrait, roughly 2:3, e.g. 640x960). The Writing tab uses it directly.
+**Novella cover.** `media/mybook.png` is the cover of Nothing Leaves the
+Island. Overwrite the file under the same name to update it.
 
 **Replace the CV.** Overwrite `media/cv.pdf`.
 
-**Replace the profile photo.** Overwrite `media/profile.jpg` with a square
-image (about 640x640).
+**Replace the profile photo.** Overwrite `media/profile.png`.
 
 **Add a personal item.** Open `personal.html`, find the relevant
 `<div class="ppanel" id="panel-...">`, and add to the `bookgrid`,
