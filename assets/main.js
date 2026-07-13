@@ -1,30 +1,29 @@
 (function () {
-  var root = document.documentElement;
-
-  // Initial theme: respect saved choice, else system preference.
-  try {
-    var saved = localStorage.getItem("nd-theme");
-    if (saved === "dark" || saved === "light") {
-      root.setAttribute("data-theme", saved);
-    } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      root.setAttribute("data-theme", "dark");
-    } else {
-      root.setAttribute("data-theme", "light");
+  // Book covers: try the local file first, then Open Library, then a
+  // styled placeholder built from the data-title / data-author attributes.
+  window.__cover = function (img) {
+    var next = img.getAttribute("data-alt");
+    if (next) {
+      img.removeAttribute("data-alt");
+      img.src = next;
+      return;
     }
-  } catch (e) {
-    root.setAttribute("data-theme", "light");
-  }
+    var box = img.closest ? img.closest(".bcov") : null;
+    if (!box) return;
+    box.classList.add("placeholder");
+    while (box.firstChild) box.removeChild(box.firstChild);
+    var t = document.createElement("span");
+    t.className = "ph-title";
+    t.textContent = box.getAttribute("data-title") || "";
+    var a = document.createElement("span");
+    a.className = "ph-author";
+    a.textContent = box.getAttribute("data-author") || "";
+    box.appendChild(t);
+    box.appendChild(a);
+  };
 
   document.addEventListener("DOMContentLoaded", function () {
-    var toggle = document.querySelector(".theme-toggle");
-    if (toggle) {
-      toggle.addEventListener("click", function () {
-        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-        root.setAttribute("data-theme", next);
-        try { localStorage.setItem("nd-theme", next); } catch (e) {}
-      });
-    }
-
+    // Mobile menu.
     var burger = document.querySelector(".nav-burger");
     var nav = document.querySelector(".nav");
     if (burger && nav) {
@@ -33,6 +32,24 @@
       });
       nav.querySelectorAll(".nav-links a").forEach(function (a) {
         a.addEventListener("click", function () { nav.classList.remove("open"); });
+      });
+    }
+
+    // Dissertation modal ("In progress" until the ProQuest link is live).
+    var modal = document.getElementById("diss-modal");
+    if (modal) {
+      var open = function () { modal.classList.add("open"); };
+      var close = function () { modal.classList.remove("open"); };
+      document.querySelectorAll(".js-diss").forEach(function (b) {
+        b.addEventListener("click", function (e) { e.preventDefault(); open(); });
+      });
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) close();
+      });
+      var x = modal.querySelector(".modal-close");
+      if (x) x.addEventListener("click", close);
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") close();
       });
     }
 

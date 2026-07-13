@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Nishat Raihan</title>
+<meta name="description" content="Research by Nishat Raihan: funding, Code LLMs and program synthesis, multilingual and low-resource NLP, LLM safety and AI in CS education, benchmarks and datasets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Spline+Sans:wght@300..600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/main.js"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="mono-mark">ND</span> Nishat Raihan</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="personal.html">Personal</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="page-head reveal">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v5l-4.6 8.5A2 2 0 0 0 7.2 19h9.6a2 2 0 0 0 1.8-2.5L14 8V3"/><path d="M8 14h8"/></svg>What I work on</div>
+    <h1>Research</h1>
+    <p>My work centers on Code LLMs in settings the field tends to overlook: languages other than English, programming languages other than Python, and safety in classrooms rather than in the abstract. Four threads below, plus the funding behind them.</p>
+  </header>
+</div>
+
+<div class="wrap">
+<div class="page-body">
+
+  <section class="group reveal d1" id="funding">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v10M9.2 9.4c0-1.1 1.2-1.9 2.8-1.9s2.8.8 2.8 1.9c0 2.9-5.6 1.6-5.6 4.6 0 1.2 1.2 2 2.8 2s2.8-.8 2.8-2"/></svg>Funding</div>
+    <div class="entry-grid">
+      <div class="entry">
+        <img class="crest" src="media/logos/nd.png" alt="University of Notre Dame" loading="lazy">
+        <div class="e-body">
+          <div class="e-top">
+            <div class="e-title">Provost's Postdoctoral Fellowship</div>
+            <div class="e-when">2026 &#8211; 2028</div>
+          </div>
+          <div class="e-org">College of Engineering, University of Notre Dame</div>
+          <div class="e-meta">A university-wide competitive fellowship funding two years of research on safety-by-construction guardrails and multilingual program synthesis for Code LLMs.</div>
+        </div>
+      </div>
+      <div class="entry">
+        <img class="crest" src="media/logos/gmu.png" alt="George Mason University" loading="lazy">
+        <div class="e-body">
+          <div class="e-top">
+            <div class="e-title">NAVSEA &amp; STTR awards</div>
+            <div class="e-when">Ph.D., GMU</div>
+          </div>
+          <div class="e-org">Naval Sea Systems Command; multiple STTR awards</div>
+          <div class="e-meta">Doctoral research supported in part by NAVSEA and several Small Business Technology Transfer awards, with hands-on experience in proposal development, budget planning, and articulating measurable research impact.</div>
+        </div>
+      </div>
+    </div>
+    <div class="copi">
+      I enjoy the proposal side of research as much as the papers, and I am always building toward the next one.
+      <strong>If you are interested in applying for grants as co-PIs, please knock me: <a href="mailto:mraihan@nd.edu">mraihan@nd.edu</a>.</strong>
+    </div>
+  </section>
+
+  <section class="section reveal d2" id="code-llms">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v5l-4.6 8.5A2 2 0 0 0 7.2 19h9.6a2 2 0 0 0 1.8-2.5L14 8V3"/><path d="M8 14h8"/></svg>Thread one</div>
+    <h2>Code LLMs &amp; program synthesis</h2>
+    <div class="prose"><p>How code models behave, and how to make them better, outside English and outside Python. This thread spans dedicated model families, instruction corpora, and execution-based evaluation for low-resource settings.</p></div>
+    <div class="pub">
+      <div class="vkey">LREC 2026</div>
+      <div>
+        <div class="ptitle"><a href="https://arxiv.org/abs/2509.09101" target="_blank" rel="noopener">TigerCoder: A Novel Suite of LLMs for Code Generation in Bangla</a></div>
+        <div class="pdesc">The first dedicated family of Code LLMs for Bangla (1B and 9B), built on a 300K instruction&#8211;code corpus, with 11&#8211;18% Pass@1 gains over larger baselines on MBPP-Bangla.</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2509.09101" target="_blank" rel="noopener">Paper</a><a href="https://huggingface.co/md-nishat-008/TigerCoder-9B" target="_blank" rel="noopener">Model</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">NAACL 2025</div>
+      <div>
+        <div class="ptitle"><a href="https://aclanthology.org/2025.naacl-long.570.pdf" target="_blank" rel="noopener">mHumanEval: A Multilingual Benchmark to Evaluate LLMs for Code Generation</a></div>
+        <div class="pdesc">Extends HumanEval to 204 natural languages and 25 programming languages, 836,400 prompts in total, so code generation can be measured far beyond English and Python.</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.naacl-long.570.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/mHumanEval-Benchmark" target="_blank" rel="noopener">Code</a><a href="https://huggingface.co/datasets/md-nishat-008/mHumanEval-Benchmark" target="_blank" rel="noopener">Dataset</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">NAACL 2025</div>
+      <div>
+        <div class="ptitle"><a href="https://aclanthology.org/2025.findings-naacl.230.pdf" target="_blank" rel="noopener">MojoBench: Language Modeling and Benchmarks for Mojo</a></div>
+        <div class="pdesc">The first language model and evaluation suite for the Mojo programming language, a case study in adapting Code LLMs to a brand-new language.</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.findings-naacl.230.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/MojoBench" target="_blank" rel="noopener">Code</a><a href="https://huggingface.co/md-nishat-008/Mojo-Coder-it" target="_blank" rel="noopener">Model</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">BigData 2024</div>
+      <div>
+        <div class="ptitle"><a href="https://ieeexplore.ieee.org/abstract/document/10826108" target="_blank" rel="noopener">Code LLMs: A Taxonomy-based Survey</a></div>
+        <div class="pdesc">A structured map of the Code LLM landscape: architectures, training data, and evaluation practices.</div>
+        <div class="plinks"><a href="https://ieeexplore.ieee.org/abstract/document/10826108" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/pdf/2412.08291" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">BLP 2025</div>
+      <div>
+        <div class="ptitle"><a href="https://aclanthology.org/2025.banglalp-1.31.pdf" target="_blank" rel="noopener">Overview of BLP-2025 Task 2: Code Generation in Bangla</a></div>
+        <div class="pdesc">The first shared task on Bangla code generation, which I organized, with 158 international participants.</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.banglalp-1.31.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal d2" id="multilingual-nlp">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l1.9 5.4 5.4 1.9-5.4 1.9L12 17.8l-1.9-5.4L4.7 10.5l5.4-1.9Z"/></svg>Thread two</div>
+    <h2>Multilingual &amp; low-resource NLP</h2>
+    <div class="prose"><p>Modeling and evaluation across natural languages, with a long-running focus on Bangla and on code-mixed text, plus how multilingual LLMs hold up in sensitive domains.</p></div>
+    <div class="pub">
+      <div class="vkey">ACL 2025</div>
+      <div>
+        <div class="ptitle"><a href="https://aclanthology.org/2025.acl-short.69.pdf" target="_blank" rel="noopener">TigerLLM: A Family of Bangla Large Language Models</a></div>
+        <div class="pdesc">Open Bangla LLMs, pretrained and instruction-tuned, that outperform prior open alternatives for the language.</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.acl-short.69.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/TigerLLM" target="_blank" rel="noopener">Code</a><a href="https://huggingface.co/md-nishat-008/TigerLLM-1B-it" target="_blank" rel="noopener">Model</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">EACL 2026</div>
+      <div>
+        <div class="ptitle"><a href="https://arxiv.org/abs/2602.02440" target="_blank" rel="noopener">Large Language Models for Mental Health: A Multilingual Evaluation</a></div>
+        <div class="pdesc">Evaluates proprietary and open LLMs on eight mental health datasets across languages and their machine-translated counterparts (LoResLM workshop).</div>
+        <div class="plinks"><a href="https://arxiv.org/abs/2602.02440" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">BLP 2023</div>
+      <div>
+        <div class="ptitle"><a href="https://arxiv.org/pdf/2311.15023.pdf" target="_blank" rel="noopener">Offensive Language Identification in Transliterated and Code-Mixed Bangla</a><span class="badge">Best Paper</span></div>
+        <div class="pdesc">Introduces TB-OLID and shows how offensive language behaves once Bangla is romanized and mixed with English (BLP @ EMNLP 2023).</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2311.15023.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/TB-OLID" target="_blank" rel="noopener">Dataset</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">2023 &#8211; 24</div>
+      <div>
+        <div class="ptitle"><a href="https://arxiv.org/pdf/2310.18023.pdf" target="_blank" rel="noopener">The 3L datasets: SentMix-3L, OffMix-3L, and EmoMix-3L</a></div>
+        <div class="pdesc">Trilingual Bangla-English-Hindi code-mixed corpora for sentiment, offensive language, and emotion detection (AACL 2023; LREC-COLING 2024).</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2310.18023.pdf" target="_blank" rel="noopener">SentMix-3L</a><a href="https://arxiv.org/pdf/2310.18387.pdf" target="_blank" rel="noopener">OffMix-3L</a><a href="http://www.lrec-conf.org/proceedings/lrec-coling-2024/wildre/2024.wildre-1.0.pdf#page=18" target="_blank" rel="noopener">EmoMix-3L</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal d3" id="safety-education">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.2l2.6 2.6L16 9"/></svg>Thread three</div>
+    <h2>LLM safety &amp; AI in CS education</h2>
+    <div class="prose"><p>Guardrails for code assistants and the role of LLMs in introductory computing. This is the thread my Notre Dame fellowship extends, toward safety-by-construction guardrails for Code LLMs.</p></div>
+    <div class="pub">
+      <div class="vkey">EACL 2026</div>
+      <div>
+        <div class="ptitle"><a href="https://aclanthology.org/2026.findings-eacl.48/" target="_blank" rel="noopener">CodeGuard: Improving LLM Guardrails in CS Education</a></div>
+        <div class="pdesc">A prompt taxonomy, an 8K-prompt dataset, and PromptShield (0.93 F1), which together cut harmful code completions by 30&#8211;65% while preserving legitimate coding help (Findings of EACL 2026).</div>
+        <div class="plinks"><a href="https://aclanthology.org/2026.findings-eacl.48/" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2602.02509" target="_blank" rel="noopener">arXiv</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">SIGCSE 2025</div>
+      <div>
+        <div class="ptitle"><a href="https://dl.acm.org/doi/abs/10.1145/3641554.3701863" target="_blank" rel="noopener">Large Language Models in Computer Science Education: A Systematic Literature Review</a></div>
+        <div class="pdesc">A systematic review of how LLMs are actually being used, and misused, in CS classrooms (SIGCSE-TS 2025).</div>
+        <div class="plinks"><a href="https://dl.acm.org/doi/abs/10.1145/3641554.3701863" target="_blank" rel="noopener">Paper</a><a href="https://dl.acm.org/doi/pdf/10.1145/3641554.3701863" target="_blank" rel="noopener">PDF</a><a href="https://github.com/s2e-lab/llm-education-survey" target="_blank" rel="noopener">Code</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">JIIS 2025</div>
+      <div>
+        <div class="ptitle"><a href="https://link.springer.com/article/10.1007/s10844-025-00968-y" target="_blank" rel="noopener">On the Performance of Large Language Models on Introductory Programming Assignments</a></div>
+        <div class="pdesc">Measures how far current LLMs get on real introductory assignments, and where they quietly fail (Journal of Intelligent Information Systems, Springer).</div>
+        <div class="plinks"><a href="https://link.springer.com/article/10.1007/s10844-025-00968-y" target="_blank" rel="noopener">Paper</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">SemEval 2024</div>
+      <div>
+        <div class="ptitle"><a href="https://arxiv.org/pdf/2403.14989.pdf" target="_blank" rel="noopener">Machine-Generated Text Detection (SemEval-2024 Task 8)</a></div>
+        <div class="pdesc">Transformer-based detection of machine-generated text, an early ingredient of the integrity side of this thread.</div>
+        <div class="plinks"><a href="https://arxiv.org/pdf/2403.14989.pdf" target="_blank" rel="noopener">PDF</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal d3" id="benchmarks">
+    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5-9 4.5-9-4.5Z"/><path d="M3 7.5V17l9 4.5 9-4.5V7.5"/><path d="M12 12v9.5"/></svg>Thread four</div>
+    <h2>Benchmarks &amp; datasets</h2>
+    <div class="prose"><p>Large, openly released resources that make under-tested settings measurable. Most of my modeling work starts by building the yardstick first.</p></div>
+    <div class="pub">
+      <div class="vkey">NAACL 2025</div>
+      <div>
+        <div class="ptitle"><a href="https://huggingface.co/datasets/md-nishat-008/mHumanEval-Benchmark" target="_blank" rel="noopener">mHumanEval</a></div>
+        <div class="pdesc">836,400 prompts across 204 natural and 25 programming languages, the widest execution-based code generation benchmark of its kind.</div>
+        <div class="plinks"><a href="https://aclanthology.org/2025.naacl-long.570.pdf" target="_blank" rel="noopener">PDF</a><a href="https://huggingface.co/datasets/md-nishat-008/mHumanEval-Benchmark" target="_blank" rel="noopener">Dataset</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">ISMIS 2024</div>
+      <div>
+        <div class="ptitle"><a href="https://link.springer.com/chapter/10.1007/978-3-031-62700-2_5" target="_blank" rel="noopener">CSEPrompts: A Benchmark of Introductory Computer Science Prompts</a></div>
+        <div class="pdesc">A benchmark of real introductory CS prompts for testing how LLMs handle classroom-style programming questions.</div>
+        <div class="plinks"><a href="https://link.springer.com/chapter/10.1007/978-3-031-62700-2_5" target="_blank" rel="noopener">Paper</a><a href="https://github.com/mraihan-gmu/CSEPrompts" target="_blank" rel="noopener">Code</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">LREC 2024</div>
+      <div>
+        <div class="ptitle"><a href="https://aclanthology.org/2024.lrec-main.977/" target="_blank" rel="noopener">MentalHelp: A Multi-Task Dataset for Mental Health in Social Media</a></div>
+        <div class="pdesc">A large multi-task dataset for mental health signals in social media text (LREC-COLING 2024).</div>
+        <div class="plinks"><a href="https://aclanthology.org/2024.lrec-main.977.pdf" target="_blank" rel="noopener">PDF</a><a href="https://github.com/mraihan-gmu/MentalHelp" target="_blank" rel="noopener">Dataset</a></div>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="vkey">BEA 2024</div>
+      <div>
+        <div class="ptitle"><a href="https://aclanthology.org/2024.readi-1.4.pdf" target="_blank" rel="noopener">The MultiLS lexical simplification dataset and shared task</a></div>
+        <div class="pdesc">An extensible, massively multilingual lexical simplification pipeline dataset and the BEA 2024 shared task built on it.</div>
+        <div class="plinks"><a href="https://aclanthology.org/2024.readi-1.4.pdf" target="_blank" rel="noopener">Dataset paper</a><a href="https://aclanthology.org/2024.bea-1.51.pdf" target="_blank" rel="noopener">Shared task</a></div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <a href="publications.html" class="btn">All 40+ publications</a>
+      <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en" target="_blank" rel="noopener" class="btn ghost">Google Scholar</a>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 Nishat Raihan · <a href="https://md-nishat.com">md-nishat.com</a></div>
+    <div class="fnav">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html">CV</a>
+      <a href="personal.html">Personal</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

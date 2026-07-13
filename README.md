@@ -4,30 +4,33 @@ Personal academic website for Nishat Raihan, incoming Provost's Postdoctoral
 Fellow at the University of Notre Dame. Plain static HTML and CSS, no build
 step, deployed through GitHub Pages with the custom domain in `CNAME`.
 
+Design: pure white background with the Notre Dame palette (Blue `#0C2340`,
+Dome Gold `#C99700`) used for text, lines, and accents. Light mode only.
+
 ## Structure
 
 ```
-index.html              Home: profile + recent news (left), about, collaboration, research, selected publications
-publications.html       Full publication list by category
-education.html          Degrees
-service.html            Organizing committees, reviewing, leadership, funding
-experience.html         Research, industry, teaching, mentoring
-honors-awards.html      Awards and bibliometrics
-talks.html              Invited talks
-personal.html           Books, Movie Theatre, Anime, Sports, Writing (left sub-nav)
-blog.html               Blog index
+index.html            Home: profile, about (with dissertation button), research boxes, recent news
+research.html         Funding (with co-PI call-out) + the four research threads with major papers
+publications.html     Full publication list with colored area pills, matching the CV tags
+cv.html               The whole CV in HTML: appointments, education, awards, talks,
+                      experience, teaching, grants, mentoring, service, industry
+personal.html         Books (with covers), Movie Theatre, Anime, Sports, Writing
+blog.html             Blog index (not in the top nav)
 blog-post-mhumaneval.html   First blog post
-assets/style.css        Shared design system (Notre Dame palette, light/dark)
-assets/main.js          Theme toggle, mobile menu, personal sub-tabs
-media/                  cv.pdf, profile.jpg, logo.png
-media/logos/            Institution logo tiles (PNG)
-CNAME                   Custom domain (md-nishat.com)
-.nojekyll               Tells GitHub Pages to serve files as-is
+education.html, experience.html, service.html,
+honors-awards.html, talks.html              Redirect stubs into cv.html sections
+assets/style.css      Shared design system
+assets/main.js        Mobile menu, personal sub-tabs, dissertation modal, cover fallback
+media/                cv.pdf, profile.jpg, mybook.png, logo.png
+media/logos/          Institution and team logo tiles (PNG)
+media/covers/         Optional local book covers (see the README inside)
+CNAME                 Custom domain (md-nishat.com)
+.nojekyll             Tells GitHub Pages to serve files as-is
 ```
 
-The top navigation is identical on every page: Home, Publications,
-Education, Service, Experience, Honors & Awards, CV (the PDF in `media/`),
-Talks, Personal. It collapses to a single menu button below 1180px wide.
+The top navigation is identical on every page: Home, Research, Publications,
+CV, Personal. It collapses to a single menu button below 880px wide.
 
 ## Deploy
 
@@ -35,7 +38,7 @@ The Git remote and `main` branch are already configured. To publish:
 
 ```bash
 git add -A
-git commit -m "Update site"
+git commit -m "Redesign: white background, five tabs, updated content"
 git push origin main
 ```
 
@@ -50,38 +53,44 @@ python3 -m http.server 8000
 
 ## Common edits
 
-**Institution logos.** The files in `media/logos/` (`nd.png`, `gmu.png`,
-`iut.png`, `samsung.png`, `uttara.png`, `duke.png`, `fresno.png`,
-`pvamu.png`, `award.png`) are clean brand-colored placeholders. To use an
-official logo, replace the file with the real PNG using the **same
-filename**. Square images (about 256x256) look best. No HTML changes are
-needed; Education, Experience, Talks, and Honors pick up the new file
-automatically.
+**Dissertation link.** The "Read my dissertation" button on the home page
+currently opens an "In progress" pop-up. When the ProQuest link is live,
+open `index.html`, find the HTML comment above the button, and swap the
+`<button class="btn js-diss">` block for the `<a class="btn" href="...">`
+shown in that comment. The pop-up markup at the bottom of the file can then
+be deleted.
+
+**Recent news.** Lives in `index.html` inside `<div class="newslist">`.
+Add a `<div class="news-item">` at the top; newest first.
+
+**Book covers.** Covers on the Personal page try `media/covers/<name>.jpg`
+first, then Open Library, then a styled navy placeholder with the title and
+author. To pin any cover, drop a JPG into `media/covers/` with the filename
+listed in `media/covers/README.txt`. No HTML changes needed.
+
+**Team logos.** `media/logos/warriors.png` and `media/logos/manutd.png` are
+clean placeholder badges. Replace each file with the official logo PNG under
+the same filename (square, about 256x256); the Sports tab picks it up
+automatically. The institution tiles (`nd.png`, `gmu.png`, `iut.png`,
+`samsung.png`, `uttara.png`, `duke.png`, `fresno.png`, `pvamu.png`,
+`award.png`) work the same way.
+
+**Novella cover.** Overwrite `media/mybook.png` with the real cover
+(portrait, roughly 2:3, e.g. 640x960). The Writing tab uses it directly.
 
 **Replace the CV.** Overwrite `media/cv.pdf`.
 
 **Replace the profile photo.** Overwrite `media/profile.jpg` with a square
 image (about 640x640).
 
-**Recent news** lives in the left column of `index.html` inside
-`<div class="profile-news">`. Add or edit `<div class="pn-item">` rows.
-
-**Add a personal section item.** Open `personal.html`, find the relevant
-`<div class="ppanel" id="panel-...">`, and add an `<li>` to a
-`<ul class="plist">`. To add a whole new sub-tab, add one
-`<button class="ptab-btn" data-tab="x">` in `.ptabs` and a matching
-`<div class="ppanel" id="panel-x">`; the script wires it up by id.
-
-**Add a blog post.**
-
-1. Copy `blog-post-mhumaneval.html` to a new file.
-2. Replace the title, date, and article body; keep the nav, footer,
-   and `<article>` structure.
-3. Add another `<article class="post-card">` block in `blog.html`.
+**Add a personal item.** Open `personal.html`, find the relevant
+`<div class="ppanel" id="panel-...">`, and add to the `bookgrid`,
+`ranklist`, or `plist` inside it.
 
 ## Notes
 
-- Dashes in date ranges (for example `Aug 2026 – 2028`) are en dashes,
-  the correct typography for ranges. There are no em dashes anywhere.
-- Dark mode follows the system setting and can be toggled; the choice
-  is stored in the browser.
+- Dashes in date ranges (for example `2026 – 2028`) are en dashes, the
+  correct typography for ranges. There are no em dashes anywhere.
+- The publication area pills use one class per area in `assets/style.css`
+  (`cat-code`, `cat-nlp`, `cat-safety`, `cat-edu`, `cat-vision`,
+  `cat-time`, `cat-mltest`); recolor them there.
