@@ -16,16 +16,30 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="brand">Nishat Raihan</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="personal.html" class="active">Personal</a></li>
-    </ul>
-    <button class="nav-burger" aria-label="Menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-drop">
+          <a href="research.html">Research<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <ul class="dropdown">
+            <li><a href="research.html#team">Current Team</a></li>
+            <li><a href="research.html#experience">Experience</a></li>
+            <li><a href="research.html#funding">Funding</a></li>
+            <li><a href="research.html#directions">Research Directions</a></li>
+          </ul>
+        </li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="personal.html" class="active">Personal</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      </button>
+      <button class="nav-burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -135,8 +149,8 @@
           <h3>Fiction · Currently reading</h3>
           <div class="bookgrid">
             <figure class="book current">
-              <div class="bcov" data-title="Of Darkness and Light" data-author="Ryan Cahill"><img src="media/covers/of-darkness-and-light.jpg" data-alt="https://covers.openlibrary.org/b/id/13826067-L.jpg" alt="Cover of Of Darkness and Light" loading="lazy" onerror="__cover(this)"></div>
-              <figcaption><span class="now">Now reading</span><span class="btitle">Of Darkness and Light</span><span class="bauth">Ryan Cahill</span></figcaption>
+              <div class="bcov" data-title="Malice" data-author="John Gwynne"><img src="media/covers/malice.jpg" data-alt="https://covers.openlibrary.org/b/isbn/9780316399739-L.jpg?default=false" alt="Cover of Malice" loading="lazy" onerror="__cover(this)"></div>
+              <figcaption><span class="now">Now reading</span><span class="btitle">Malice</span><span class="bauth">John Gwynne</span></figcaption>
             </figure>
             <figure class="book current">
               <div class="bcov" data-title="Fool's Errand" data-author="Robin Hobb"><img src="media/covers/fools-errand.jpg" data-alt="https://covers.openlibrary.org/b/isbn/9780553582444-L.jpg?default=false" alt="Cover of Fool's Errand" loading="lazy" onerror="__cover(this)"></div>
@@ -156,9 +170,9 @@
             <li><span class="rk">02</span><span class="rtitle">Undertone</span></li>
             <li><span class="rk">03</span><span class="rtitle">Hokum</span></li>
             <li><span class="rk">04</span><span class="rtitle">Michael</span></li>
-            <li><span class="rk">05</span><span class="rtitle">The Mummy</span><span class="rnote">Lee Cronin</span></li>
+            <li><span class="rk">05</span><span class="rtitle">Spider-Man: Brand New Day</span></li>
           </ol>
-          <div class="pnote">Last updated: June 20, 2026.</div>
+          <div class="pnote">Last updated: August 26, 2026.</div>
         </div>
       </div>
 

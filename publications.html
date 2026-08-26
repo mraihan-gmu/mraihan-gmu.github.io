@@ -16,16 +16,30 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="brand">Nishat Raihan</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html" class="active">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="personal.html">Personal</a></li>
-    </ul>
-    <button class="nav-burger" aria-label="Menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-drop">
+          <a href="research.html">Research<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <ul class="dropdown">
+            <li><a href="research.html#team">Current Team</a></li>
+            <li><a href="research.html#experience">Experience</a></li>
+            <li><a href="research.html#funding">Funding</a></li>
+            <li><a href="research.html#directions">Research Directions</a></li>
+          </ul>
+        </li>
+        <li><a href="publications.html" class="active">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="personal.html">Personal</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      </button>
+      <button class="nav-burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -36,7 +50,7 @@
     <p>My name in <strong>bold</strong>. A superscript <sup>m</sup> marks mentees I co-authored with. The colored pill on each paper gives its area, matching the tags on my CV.</p>
     <div class="stats">
       <div class="stat"><div class="num">40+</div><div class="lab">Publications</div></div>
-      <div class="stat"><div class="num">650+</div><div class="lab">Citations</div></div>
+      <div class="stat"><div class="num">700+</div><div class="lab">Citations</div></div>
       <div class="stat"><div class="num">14</div><div class="lab">h-index</div></div>
       <div class="stat"><div class="num">19</div><div class="lab">i10-index</div></div>
     </div>
@@ -49,9 +63,20 @@
 
 <div class="wrap">
 <div class="page-body">
+<div class="side-layout reveal d1">
 
-  <section class="section reveal d1">
-    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M19 19v2H6a2 2 0 0 1-2-2"/><path d="M8 7h7M8 11h7"/></svg>Journal articles</div>
+  <nav class="sidenav" data-spy aria-label="Publication sections">
+    <span class="sn-label">On this page</span>
+    <a href="#journals"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M19 19v2H6a2 2 0 0 1-2-2"/><path d="M8 7h7M8 11h7"/></svg>Journal Articles</a>
+    <a href="#conference"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8.5 20h7M8.5 9.5l2.5 2.5 4.5-4.5"/></svg>Conference Papers</a>
+    <a href="#workshops"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 18 9 9.5 17.5 6 18l.5-3.5Z"/><path d="M13 7 17 11"/><path d="M4 21h16"/></svg>Workshop Papers</a>
+    <a href="#preprints"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7Z"/><path d="M14 3v5h5"/><path d="M9.5 13.5h5M9.5 17h5"/></svg>Preprints &amp; Reports</a>
+  </nav>
+
+  <div class="side-main">
+
+  <section class="group" id="journals">
+    <div class="eyebrow band"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/><path d="M19 19v2H6a2 2 0 0 1-2-2"/><path d="M8 7h7M8 11h7"/></svg>Journal articles</div>
 
     <div class="pub">
       <div class="vkey">J2</div>
@@ -75,8 +100,18 @@
     </div>
   </section>
 
-  <section class="section reveal d2">
-    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8.5 20h7M8.5 9.5l2.5 2.5 4.5-4.5"/></svg>Conference papers</div>
+  <section class="group" id="conference">
+    <div class="eyebrow band"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v4M8.5 20h7M8.5 9.5l2.5 2.5 4.5-4.5"/></svg>Conference papers</div>
+
+    <div class="pub">
+      <div class="vkey">C13</div>
+      <div>
+        <div class="ptitle">On the Robustness of Code LLM Guardrails to Code-mixed and Transliterated Inputs</div>
+        <div class="pauthors"><span class="me">Nishat Raihan</span> et al.</div>
+        <div class="pvenue">Findings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP 2026), to appear</div>
+        <div class="pcats"><span class="cat cat-safety">AI Safety</span></div>
+      </div>
+    </div>
 
     <div class="pub">
       <div class="vkey">C12</div>
@@ -96,7 +131,6 @@
         <div class="pauthors"><span class="me">Nishat Raihan</span>, Noah Erdachew<sup>m</sup>, Jayoti Devi<sup>m</sup>, Joanna C. S. Santos, Marcos Zampieri</div>
         <div class="pvenue">Findings of the 19th Conference of the European Chapter of the ACL (EACL 2026)</div>
         <div class="pcats"><span class="cat cat-safety">AI Safety</span></div>
-        <div class="pdesc">A taxonomy, an 8K-prompt dataset, and PromptShield (0.93 F1) that cut harmful code completions by 30–65% while preserving legitimate coding assistance.</div>
         <div class="plinks"><a href="https://aclanthology.org/2026.findings-eacl.48/" target="_blank" rel="noopener">Paper</a><a href="https://arxiv.org/abs/2602.02509" target="_blank" rel="noopener">arXiv</a></div>
       </div>
     </div>
@@ -209,8 +243,8 @@
     </div>
   </section>
 
-  <section class="section reveal d3">
-    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 18 9 9.5 17.5 6 18l.5-3.5Z"/><path d="M13 7 17 11"/><path d="M4 21h16"/></svg>Workshop &amp; shared-task papers</div>
+  <section class="group" id="workshops">
+    <div class="eyebrow band"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 18 9 9.5 17.5 6 18l.5-3.5Z"/><path d="M13 7 17 11"/><path d="M4 21h16"/></svg>Workshop &amp; shared-task papers</div>
 
     <div class="pub">
       <div class="vkey">W18</div>
@@ -410,8 +444,8 @@
     </div>
   </section>
 
-  <section class="section reveal d4">
-    <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7Z"/><path d="M14 3v5h5"/><path d="M9.5 13.5h5M9.5 17h5"/><path d="M3 7v13a1 1 0 0 0 1 1h11" stroke-dasharray="2 2"/></svg>Preprints &amp; technical reports</div>
+  <section class="group" id="preprints">
+    <div class="eyebrow band"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7Z"/><path d="M14 3v5h5"/><path d="M9.5 13.5h5M9.5 17h5"/><path d="M3 7v13a1 1 0 0 0 1 1h11" stroke-dasharray="2 2"/></svg>Preprints &amp; technical reports</div>
 
     <div class="pub">
       <div class="vkey">P6</div>
@@ -478,6 +512,8 @@
     </div>
   </section>
 
+  </div>
+</div>
 </div>
 </div>
 

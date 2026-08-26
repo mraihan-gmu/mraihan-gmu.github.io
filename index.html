@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nishat Raihan · Provost's Postdoctoral Fellow, University of Notre Dame</title>
-<meta name="description" content="Nishat Raihan is an incoming Provost's Postdoctoral Fellow at the University of Notre Dame, working on Code LLMs, multilingual NLP, LLM safety, and benchmarks.">
+<meta name="description" content="Nishat Raihan is a Provost's Postdoctoral Fellow at the University of Notre Dame, working on Code LLMs, multilingual NLP, LLM safety, and benchmarks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Spline+Sans:wght@300..600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -16,16 +16,30 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="brand">Nishat Raihan</a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="personal.html">Personal</a></li>
-    </ul>
-    <button class="nav-burger" aria-label="Menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li class="has-drop">
+          <a href="research.html">Research<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+          <ul class="dropdown">
+            <li><a href="research.html#team">Current Team</a></li>
+            <li><a href="research.html#experience">Experience</a></li>
+            <li><a href="research.html#funding">Funding</a></li>
+            <li><a href="research.html#directions">Research Directions</a></li>
+          </ul>
+        </li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="personal.html">Personal</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      </button>
+      <button class="nav-burger" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -37,10 +51,7 @@
       <img class="profile-photo" src="media/profile.png" alt="Nishat Raihan">
     </div>
     <h1>Nishat Raihan</h1>
-    <div class="role">
-      <span class="incoming">Incoming · Fall 2026</span><br>
-      Provost's Postdoctoral Fellow
-    </div>
+    <div class="role">Provost's Postdoctoral Fellow</div>
     <div class="uni-line">
       <img class="crest sm" src="media/logos/nd.png" alt="University of Notre Dame" loading="lazy">
       <div class="ul-text">
@@ -49,6 +60,7 @@
       </div>
     </div>
     <div class="affil" style="margin-top:10px;">
+      356B Fitzpatrick Hall<br>
       Notre Dame, IN 46556, USA<br>
       <span style="color:var(--ink-faint)">Faculty mentor:</span>
       <a href="https://joannacss.github.io/" target="_blank" rel="noopener">Dr. Joanna C. S. Santos</a><br>
@@ -78,9 +90,8 @@
     <section class="section reveal d2">
       <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg>About me</div>
       <div class="prose justify">
-        <p class="lead">I build large language models end to end, from data curation and pretraining to fine-tuning and evaluation, with a focus on code generation in settings the field tends to overlook.</p>
-        <p>I completed my Ph.D. in Computer Science at <a href="https://www.gmu.edu" target="_blank" rel="noopener">George Mason University</a> in 2026, advised by Dr. <a href="https://www.marcoszampieri.com/" target="_blank" rel="noopener">Marcos Zampieri</a> and Dr. <a href="https://antonisa.github.io/" target="_blank" rel="noopener">Antonios Anastasopoulos</a>. I defended and passed in June 2026. My dissertation, <em>Exploring and Adapting Code LLMs for Underrepresented Domains</em>, asks a recurring question: what happens to code models once you step outside English, outside Python, and outside the benchmarks everyone already optimizes for?</p>
-        <p>In Fall 2026 I join the University of Notre Dame as a <strong>Provost's Postdoctoral Fellow</strong> in Computer Science &amp; Engineering, working with Dr. Joanna C. S. Santos on safety-by-construction guardrails and multilingual program synthesis for Code LLMs. Along the way I have released open benchmarks, corpora, and models, including mHumanEval, TigerLLM, TigerCoder, and MojoBench, that the community can build on.</p>
+        <p class="lead">I build large language models end to end&#8212;data curation, pretraining, fine-tuning, and evaluation&#8212;with a focus on code generation beyond English, beyond Python, and beyond the benchmarks the field already optimizes for.</p>
+        <p>I am a <strong>Provost's Postdoctoral Fellow</strong> at the <a href="https://cse.nd.edu/" target="_blank" rel="noopener">University of Notre Dame</a>, working with Dr. <a href="https://joannacss.github.io/" target="_blank" rel="noopener">Joanna C. S. Santos</a> in the <a href="https://s2elab.org/" target="_blank" rel="noopener">S2E Lab</a> on safety-by-construction guardrails and multilingual program synthesis for Code LLMs. I completed my Ph.D. in Computer Science at <a href="https://www.gmu.edu" target="_blank" rel="noopener">George Mason University</a> in 2026, advised by Dr. <a href="https://www.marcoszampieri.com/" target="_blank" rel="noopener">Marcos Zampieri</a> and Dr. <a href="https://antonisa.github.io/" target="_blank" rel="noopener">Antonios Anastasopoulos</a>. My open releases include mHumanEval, TigerLLM, TigerCoder, and MojoBench.</p>
       </div>
       <div class="btn-row">
         <!-- When the dissertation goes live on ProQuest, replace this button with:
@@ -114,7 +125,7 @@
         <a class="interest" href="research.html#safety-education">
           <div class="ihead"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.2l2.6 2.6L16 9"/></svg><h3>LLM safety &amp; AI in CS education</h3></div>
           <p>Guardrails for code assistants and the role of LLMs in introductory computing.</p>
-          <div class="tags"><span class="tag">EACL 2026</span><span class="tag">SIGCSE-TS 2025</span><span class="tag">JIIS 2025</span></div>
+          <div class="tags"><span class="tag">EMNLP 2026</span><span class="tag">EACL 2026</span><span class="tag">SIGCSE-TS 2025</span></div>
           <span class="go">Read more &#8594;</span>
         </a>
         <a class="interest" href="research.html#benchmarks">
@@ -130,32 +141,36 @@
       <div class="eyebrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4a1 1 0 0 0 1 1h3l5 4V5L8 9H5a1 1 0 0 0-1 1Z"/><path d="M17 9a4.5 4.5 0 0 1 0 6"/></svg>Recent news</div>
       <div class="newslist">
         <div class="news-item">
-          <span class="n-when">August 2026</span>
-          Joining the <a href="https://cse.nd.edu/" target="_blank" rel="noopener">University of Notre Dame</a> as a <b>Provost's Postdoctoral Fellow</b> in Computer Science &amp; Engineering, mentored by <a href="https://joannacss.github.io/" target="_blank" rel="noopener">Dr. Joanna C. S. Santos</a>.
+          <span class="n-when">Aug 2026</span>
+          <span class="n-text"><a href="publications.html"><b>Guardrail robustness</b> paper</a> accepted to <b>EMNLP 2026</b> Findings.</span>
         </div>
         <div class="news-item">
-          <span class="n-when">July 2026</span>
-          Crossed <b>600 citations</b> on <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+          <span class="n-when">Aug 2026</span>
+          <span class="n-text">Joined <a href="https://cse.nd.edu/" target="_blank" rel="noopener">Notre Dame</a> as a <b>Provost's Postdoctoral Fellow</b>.</span>
         </div>
         <div class="news-item">
-          <span class="n-when">June 2026</span>
-          <b>Passed my Ph.D. defense</b> at <a href="https://cs.gmu.edu/" target="_blank" rel="noopener">George Mason University</a>.
+          <span class="n-when">Jul 2026</span>
+          <span class="n-text">Crossed <b>700 citations</b> on <a href="https://scholar.google.com/citations?user=pufsZewAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</span>
+        </div>
+        <div class="news-item">
+          <span class="n-when">Jun 2026</span>
+          <span class="n-text"><b>Passed my Ph.D. defense</b> at <a href="https://cs.gmu.edu/" target="_blank" rel="noopener">George Mason University</a>.</span>
         </div>
         <div class="news-item">
           <span class="n-when">May 2026</span>
-          Invited talks on <em>Adapting Code LLMs for Under-Explored Domains</em> at <a href="https://cs.duke.edu/" target="_blank" rel="noopener">Duke University</a>, <a href="https://www.pvamu.edu/" target="_blank" rel="noopener">Prairie View A&amp;M University</a>, and <a href="https://www.fresnostate.edu/" target="_blank" rel="noopener">California State University, Fresno</a>.
+          <span class="n-text">Invited talks at <a href="https://cs.duke.edu/" target="_blank" rel="noopener">Duke</a>, <a href="https://www.pvamu.edu/" target="_blank" rel="noopener">Prairie View A&amp;M</a>, and <a href="https://www.fresnostate.edu/" target="_blank" rel="noopener">Fresno State</a>.</span>
         </div>
         <div class="news-item">
-          <span class="n-when">April 2026</span>
-          Received the <b>Doctoral Research Scholarship, Tier 1</b>, from <a href="https://graduate.gmu.edu/" target="_blank" rel="noopener">the Graduate Division</a> at George Mason University.
+          <span class="n-when">Apr 2026</span>
+          <span class="n-text">Received GMU's <b>Doctoral Research Scholarship, Tier 1</b>.</span>
         </div>
         <div class="news-item">
-          <span class="n-when">March 2026</span>
-          <a href="https://arxiv.org/abs/2509.09101" target="_blank" rel="noopener"><b>TigerCoder</b>: A Novel Suite of LLMs for Code Generation in Bangla</a> accepted at <a href="https://lrec2026.info/" target="_blank" rel="noopener">LREC 2026</a>.
+          <span class="n-when">Mar 2026</span>
+          <span class="n-text"><a href="https://arxiv.org/abs/2509.09101" target="_blank" rel="noopener"><b>TigerCoder</b></a> accepted at <a href="https://lrec2026.info/" target="_blank" rel="noopener">LREC 2026</a>.</span>
         </div>
         <div class="news-item">
-          <span class="n-when">January 2026</span>
-          <a href="https://aclanthology.org/2026.findings-eacl.48/" target="_blank" rel="noopener"><b>CodeGuard</b>: Improving LLM Guardrails in CS Education</a> accepted to Findings of <a href="https://2026.eacl.org/" target="_blank" rel="noopener">EACL 2026</a>.
+          <span class="n-when">Jan 2026</span>
+          <span class="n-text"><a href="https://aclanthology.org/2026.findings-eacl.48/" target="_blank" rel="noopener"><b>CodeGuard</b></a> accepted to Findings of <a href="https://2026.eacl.org/" target="_blank" rel="noopener">EACL 2026</a>.</span>
         </div>
       </div>
       <div class="btn-row">
