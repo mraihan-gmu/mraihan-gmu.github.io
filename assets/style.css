@@ -398,10 +398,11 @@ a.interest:hover .go { gap: 9px; }
 
 /* funding call-out on the research page */
 .copi {
-  border: 1.5px solid var(--gold);
-  border-radius: 8px;
-  background: linear-gradient(180deg, var(--halo), transparent);
-  padding: 18px 22px; margin-top: 18px;
+  border: none;
+  border-left: 3px solid var(--gold);
+  border-radius: 0;
+  background: none;
+  padding: 4px 0 4px 17px; margin-top: 26px;
   font-size: 0.95rem; color: var(--ink-soft);
 }
 .copi strong { color: var(--ink); }
@@ -535,38 +536,41 @@ html[data-theme="dark"] .cat-mltest { color: #e0a271; background: rgba(224, 162,
 .side-main { min-width: 0; }
 
 /* ---- horizontal entry grid (cv, research funding) --------------------- */
-.group { margin-bottom: 48px; scroll-margin-top: 88px; }
+.group { margin-bottom: 58px; scroll-margin-top: 88px; }
 .group:last-child { margin-bottom: 0; }
 .group > .eyebrow { justify-content: flex-start; }
 .group > .eyebrow::after { display: none; }
 
-/* banded section headers: clearly separated sections */
+/* section headers: a strong gold rule, no box */
 .eyebrow.band {
-  background: var(--bg-soft);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--gold);
-  border-radius: 6px;
-  padding: 10px 16px;
-  margin-bottom: 20px;
-  font-size: 0.8rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--gold);
+  border-radius: 0;
+  padding: 0 0 9px;
+  margin-bottom: 24px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
 }
+.eyebrow.band svg { width: 17px; height: 17px; }
 .eyebrow.band::after { display: none; }
 
 .entry-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 24px 36px;
 }
 .entry-grid.one { grid-template-columns: 1fr; }
 .entry {
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--surface);
-  padding: 18px 20px;
-  transition: border-color 0.2s, transform 0.2s;
-  display: flex; flex-direction: row; align-items: flex-start; gap: 16px;
+  border: none;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  display: flex; flex-direction: row; align-items: flex-start; gap: 14px;
 }
-.entry:hover { border-color: var(--gold); transform: translateY(-2px); }
+.entry:hover { transform: none; }
 .entry .e-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .entry .e-top {
   display: flex; justify-content: space-between;
@@ -647,15 +651,15 @@ html[data-theme="dark"] .cat-mltest { color: #e0a271; background: rgba(224, 162,
 
 /* sub-groupings inside a CV section (e.g. mentoring by student level) */
 .subhead {
-  font-family: var(--sans); font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint); margin: 24px 0 11px;
-  display: flex; align-items: center; gap: 10px;
+  display: block;
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--accent);
+  margin: 36px 0 16px;
+  padding: 2px 0 2px 13px;
+  border-left: 3px solid var(--gold);
 }
-.subhead::after {
-  content: ""; flex: 1; height: 1px; background: var(--line);
-}
-.group > .eyebrow + .subhead { margin-top: 0; }
+.group > .eyebrow + .subhead { margin-top: 4px; }
 
 /* personal page: left sub-nav + panels */
 .personal-wrap {
@@ -951,6 +955,12 @@ html[data-theme="dark"] .cat-mltest { color: #e0a271; background: rgba(224, 162,
   .nav.open .dropdown a {
     padding: 9px 8px 9px 26px; font-size: 0.84rem; color: var(--ink-faint);
   }
+}
+/* two-column entries get narrow while the side nav is still showing, so
+   let the date sit under the title instead of squeezing it */
+@media (max-width: 1150px) {
+  .entry .e-top { flex-direction: column; align-items: flex-start; gap: 1px; }
+  .entry .e-when { padding-top: 0; }
 }
 @media (max-width: 920px) {
   .layout { grid-template-columns: 1fr; gap: 40px; padding-top: 38px; }
