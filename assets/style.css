@@ -611,15 +611,17 @@ html[data-theme="dark"] .cat-mltest { color: #e0a271; background: rgba(224, 162,
 .cv-list li { margin-bottom: 7px; break-inside: avoid; list-style: none; padding-left: 16px; position: relative; }
 .cv-list li::before { content: "\25B9"; position: absolute; left: 0; color: var(--accent); }
 
-/* research page: lab team strip */
+/* research page: lab team strip — one row that always fits its column */
 .team-strip {
-  display: flex; gap: 20px;
-  overflow-x: auto; padding: 8px 2px 14px;
-  -webkit-overflow-scrolling: touch;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px 10px;
+  padding: 6px 0 2px;
 }
-.member { flex: 0 0 122px; text-align: center; min-width: 0; }
+.member { text-align: center; min-width: 0; }
 .member .m-photo, .member .m-ph {
-  width: 106px; height: 106px; margin: 0 auto;
+  width: 100%; max-width: 104px; aspect-ratio: 1;
+  margin: 0 auto;
   border-radius: 50%; object-fit: cover; display: block;
   border: 2px solid var(--line);
   background: var(--bg-soft);
@@ -628,19 +630,32 @@ html[data-theme="dark"] .cat-mltest { color: #e0a271; background: rgba(224, 162,
 .member.pi .m-photo { border-color: var(--gold); }
 .member .m-ph {
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif); font-size: 1.35rem; font-weight: 560;
+  font-family: var(--serif); font-size: 1.2rem; font-weight: 560;
   color: var(--ink-faint); letter-spacing: 0.04em;
 }
 .member .m-name {
-  display: block; margin-top: 10px;
-  font-size: 0.88rem; font-weight: 600; color: var(--ink); line-height: 1.3;
+  display: block; margin-top: 9px;
+  font-size: 0.82rem; font-weight: 600; color: var(--ink); line-height: 1.28;
+  hyphens: auto; -webkit-hyphens: auto;
 }
 .member .m-name a { color: var(--ink); }
 .member .m-name a:hover { color: var(--link); text-decoration: none; }
 .member .m-role {
   display: block; margin-top: 2px;
-  font-size: 0.72rem; color: var(--ink-faint); line-height: 1.35;
+  font-size: 0.69rem; color: var(--ink-faint); line-height: 1.3;
 }
+
+/* sub-groupings inside a CV section (e.g. mentoring by student level) */
+.subhead {
+  font-family: var(--sans); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint); margin: 24px 0 11px;
+  display: flex; align-items: center; gap: 10px;
+}
+.subhead::after {
+  content: ""; flex: 1; height: 1px; background: var(--line);
+}
+.group > .eyebrow + .subhead { margin-top: 0; }
 
 /* personal page: left sub-nav + panels */
 .personal-wrap {
@@ -977,8 +992,8 @@ html[data-theme="dark"] .cat-mltest { color: #e0a271; background: rgba(224, 162,
   .bookgrid { grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 16px 14px; }
   .ranklist li { grid-template-columns: 48px 1fr; }
   .ranklist .rnote { grid-column: 2; }
-  .member { flex-basis: 104px; }
-  .member .m-photo, .member .m-ph { width: 88px; height: 88px; }
+  .team-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 12px; }
+  .member .m-photo, .member .m-ph { max-width: 96px; }
 }
 @media (max-width: 460px) {
   .writing-wrap { grid-template-columns: 1fr; }
