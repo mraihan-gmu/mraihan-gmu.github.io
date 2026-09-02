@@ -154,6 +154,24 @@ strong, b { font-weight: 600; color: var(--ink); }
   background: var(--gold); border-radius: 2px;
 }
 .nav-links .has-drop > a { display: inline-flex; align-items: center; gap: 5px; }
+
+/* LangCode 2027 — outbound call to action, sits at the end of the nav */
+.nav-links a.nav-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-left: 8px; padding: 7px 14px;
+  border: 1px solid var(--accent); border-radius: 999px;
+  color: var(--accent); font-weight: 500;
+}
+.nav-links a.nav-cta:hover {
+  /* --btn-ink is white in both themes, but --accent is near-white in dark,
+     so fill against the page background instead to keep the label legible */
+  background: var(--accent); border-color: var(--accent); color: var(--bg);
+}
+.nav-links a.nav-cta .ext {
+  width: 12px; height: 12px; fill: none; stroke: currentColor;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .75;
+}
+
 .nav-links .has-drop .caret {
   width: 11px; height: 11px; stroke: currentColor; fill: none;
   stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
@@ -945,6 +963,10 @@ html[data-theme="dark"] .cat-mltest { color: #e0a271; background: rgba(224, 162,
   .nav.open .nav-links > li { position: static; }
   .nav.open .nav-links a { padding: 13px 8px; border-radius: 0; display: block; }
   .nav.open .nav-links a.active::after { display: none; }
+  .nav.open .nav-links a.nav-cta {
+    display: inline-flex; width: fit-content;
+    margin: 10px 0 2px; padding: 10px 16px; border-radius: 999px;
+  }
   .nav.open .has-drop .caret { display: none; }
   .nav.open .dropdown {
     position: static; opacity: 1; visibility: visible; transform: none;
