@@ -29,7 +29,6 @@
   --btn-bg:    var(--nd-blue);
   --btn-bg-hover: var(--nd-blue-mid);
   --btn-ink:   #ffffff;
-  --overlay:   rgba(12, 35, 64, 0.5);
 
   --maxw: 1300px;
   --radius: 4px;
@@ -58,7 +57,6 @@ html[data-theme="dark"] {
   --btn-bg:    var(--nd-blue-bright);
   --btn-bg-hover: #2a62aa;
   --btn-ink:   #ffffff;
-  --overlay:   rgba(2, 8, 18, 0.66);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 28px rgba(0, 0, 0, 0.35);
 }
 
@@ -81,7 +79,6 @@ html[data-theme="dark"] {
     --btn-bg:    var(--nd-blue-bright);
     --btn-bg-hover: #2a62aa;
     --btn-ink:   #ffffff;
-    --overlay:   rgba(2, 8, 18, 0.66);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 28px rgba(0, 0, 0, 0.35);
   }
 }
@@ -382,37 +379,6 @@ a.interest:hover .go { gap: 9px; }
   border: 1px solid var(--line);
   padding: 2px 9px; border-radius: 999px;
 }
-
-/* dissertation modal */
-.modal-overlay {
-  position: fixed; inset: 0; z-index: 100;
-  background: var(--overlay);
-  display: none; align-items: center; justify-content: center;
-  padding: 24px;
-}
-.modal-overlay.open { display: flex; }
-.modal {
-  position: relative; width: 100%; max-width: 460px;
-  background: var(--surface); border: 1px solid var(--line);
-  border-top: 3px solid var(--gold); border-radius: 8px;
-  padding: 28px 30px 26px;
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
-  animation: rise 0.35s cubic-bezier(.2,.7,.2,1);
-}
-.modal .m-eyebrow {
-  font-family: var(--mono); font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 10px;
-}
-.modal h3 { font-size: 1.25rem; margin-bottom: 10px; }
-.modal p { font-size: 0.94rem; color: var(--ink-soft); }
-.modal-close {
-  position: absolute; top: 12px; right: 14px;
-  background: none; border: none; cursor: pointer;
-  font-size: 1.5rem; line-height: 1; color: var(--ink-faint);
-  padding: 4px;
-}
-.modal-close:hover { color: var(--accent); }
 
 /* funding call-out on the research page */
 .copi {
@@ -947,7 +913,7 @@ html[data-theme="dark"] .cat-mltest { color: #e0a271; background: rgba(224, 162,
 .reveal.d4 { animation-delay: 0.26s; }
 @keyframes rise { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .ppanel, .modal { animation: none; opacity: 1; transform: none; }
+  .reveal, .ppanel { animation: none; opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
 

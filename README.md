@@ -21,7 +21,7 @@ blog-post-mhumaneval.html   First blog post
 education.html, experience.html, service.html,
 honors-awards.html, talks.html              Redirect stubs into cv.html sections
 assets/style.css      Shared design system
-assets/main.js        Mobile menu, personal sub-tabs, dissertation modal, cover fallback
+assets/main.js        Mobile menu, personal sub-tabs, cover fallback
 media/                cv.pdf, profile.png, mybook.png, logo.png
 media/logos/          Institution and team logo tiles (PNG)
 media/covers/         Optional local book covers (see the README inside)
@@ -52,13 +52,6 @@ python3 -m http.server 8000
 ```
 
 ## Common edits
-
-**Dissertation link.** The "Read my dissertation" button on the home page
-currently opens an "In progress" pop-up. When the ProQuest link is live,
-open `index.html`, find the HTML comment above the button, and swap the
-`<button class="btn js-diss">` block for the `<a class="btn" href="...">`
-shown in that comment. The pop-up markup at the bottom of the file can then
-be deleted.
 
 **Recent news.** Lives in `index.html` inside `<div class="newslist">`.
 Add a `<div class="news-item">` at the top; newest first.

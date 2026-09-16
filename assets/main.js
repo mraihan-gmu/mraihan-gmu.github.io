@@ -58,24 +58,6 @@
       });
     }
 
-    // Dissertation modal ("In progress" until the ProQuest link is live).
-    var modal = document.getElementById("diss-modal");
-    if (modal) {
-      var open = function () { modal.classList.add("open"); };
-      var close = function () { modal.classList.remove("open"); };
-      document.querySelectorAll(".js-diss").forEach(function (b) {
-        b.addEventListener("click", function (e) { e.preventDefault(); open(); });
-      });
-      modal.addEventListener("click", function (e) {
-        if (e.target === modal) close();
-      });
-      var x = modal.querySelector(".modal-close");
-      if (x) x.addEventListener("click", close);
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") close();
-      });
-    }
-
     // Section side navigation (research, publications, cv): highlight the
     // section currently in view as the page scrolls.
     var spy = document.querySelector(".sidenav[data-spy]");
