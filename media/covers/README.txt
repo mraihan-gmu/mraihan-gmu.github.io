@@ -9,6 +9,7 @@ drop a JPG with the matching filename (about 400x600 px):
   deep-work.jpg
   art-of-being-alone.jpg
   adhd-is-awesome.jpg
+  consolations-of-philosophy.jpg
   empire-of-ai.jpg
   chamber-of-secrets.jpg
   goblet-of-fire.jpg
@@ -22,5 +23,6 @@ drop a JPG with the matching filename (about 400x600 px):
   way-of-kings.jpg
   of-darkness-and-light.jpg
   fools-errand.jpg
+  malice.jpg
 
 No HTML changes are needed.
