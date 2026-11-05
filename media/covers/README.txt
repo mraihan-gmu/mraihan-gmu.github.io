@@ -24,5 +24,6 @@ drop a JPG with the matching filename (about 400x600 px):
   of-darkness-and-light.jpg
   fools-errand.jpg
   malice.jpg
+  ruin.jpg
 
 No HTML changes are needed.
